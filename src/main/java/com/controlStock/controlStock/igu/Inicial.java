@@ -1,8 +1,46 @@
 package com.controlStock.controlStock.igu;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import com.controlStock.controlStock.principal.Coordinador;
 
-public class Inicial extends javax.swing.JFrame {
+public class Inicial extends javax.swing.JFrame implements ActionListener{
+	
+	  private javax.swing.JMenuBar jMenuBar1;
+	    private javax.swing.JLabel lblLogo;
+	    private javax.swing.JMenu mnEstadisticas;
+	    private javax.swing.JMenu mnImpresoras;
+	    private javax.swing.JMenu mnInsumosImpresoras;
+	    private javax.swing.JMenu mnInsumosVarios;
+	    private javax.swing.JMenu mnProveedores;
+	    private javax.swing.JMenu mnServicios;
+	    private javax.swing.JMenuItem mntmActualizarSerie;
+	    private javax.swing.JMenuItem mntmAgregarNuevaImpresora;
+	    private javax.swing.JMenuItem mntmAgregarProveedor;
+	    private javax.swing.JMenuItem mntmAgregarServicio;
+	    private javax.swing.JMenuItem mntmBajaImpresora;
+	    private javax.swing.JMenuItem mntmConsumidoPeriodo;
+	    private javax.swing.JMenuItem mntmEliminarProveedor;
+	    private javax.swing.JMenuItem mntmEntregaImpresoraNueva;
+	    private javax.swing.JMenuItem mntmEntregarImpresoraUsada;
+	    private javax.swing.JMenuItem mntmIngresoInsumosImp;
+	    private javax.swing.JMenuItem mntmIngresoInsumosVarios;
+	    private javax.swing.JMenuItem mntmModificarProveedor;
+	    private javax.swing.JMenuItem mntmModificarServicio;
+	    private javax.swing.JMenuItem mntmNuevoInsumoVarios;
+	    private javax.swing.JMenuItem mntmQuitarImpresoraDelServicio;
+	    private javax.swing.JMenuItem mntmSalidaInsumosImp;
+	    private javax.swing.JMenuItem mntmSalidaInsumosVarios;
+	    private javax.swing.JMenuItem mntmSalidasPorInsumo;
+	    private javax.swing.JMenuItem mntmSalidasPorServicio;
+	    private javax.swing.JMenuItem mntmStock;
+	    private javax.swing.JMenuItem mntmingresoPorInsumo;
+	    private javax.swing.JMenuItem mntmingresoPorProveedor;
+	    private javax.swing.JMenu mntmmovimientoXInsumo;
+	    private javax.swing.JMenu mntmmovimientoXProveedor;
+	    private javax.swing.JMenuItem mntmnuevoInsumoImpresora;
+	   
 
     
 	private static final long serialVersionUID = 1L;
@@ -17,7 +55,7 @@ public class Inicial extends javax.swing.JFrame {
         lblLogo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnServicios = new javax.swing.JMenu();
-        mntmAgregarServicio = new javax.swing.JMenuItem();
+        mntmAgregarServicio = new javax.swing.JMenuItem();        
         mntmModificarServicio = new javax.swing.JMenuItem();
         mnProveedores = new javax.swing.JMenu();
         mntmAgregarProveedor = new javax.swing.JMenuItem();
@@ -57,29 +95,53 @@ public class Inicial extends javax.swing.JFrame {
         lblLogo.setPreferredSize(new java.awt.Dimension(450, 450));
 
         mnServicios.setText("Servicios");
-
+        jMenuBar1.add(mnServicios);
+        
         mntmAgregarServicio.setText("Agregar");
         mnServicios.add(mntmAgregarServicio);
+        mntmAgregarServicio.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		miCoordinador.iniciarPantallaNuevoServicio();
+        	}
+        });
 
         mntmModificarServicio.setText("Modificar");
-        mnServicios.add(mntmModificarServicio);
+        mnServicios.add(mntmModificarServicio); 
+        mntmModificarServicio.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		miCoordinador.iniciarPantallaModificarServicio();
+        	}
+        });
 
-        jMenuBar1.add(mnServicios);
-
+        jMenuBar1.add(mnProveedores);
         mnProveedores.setText("Proveedores");
-
+        
         mntmAgregarProveedor.setText("Agregar");
         mnProveedores.add(mntmAgregarProveedor);
+        mntmAgregarProveedor.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		miCoordinador.iniciarPantallaNuevoProveedor();
+        	}
+        });
 
         mntmModificarProveedor.setText("Modificar");
         mnProveedores.add(mntmModificarProveedor);
+        mntmModificarProveedor.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		miCoordinador.iniciarPantallaModificarProveedor();
+        	}
+        });
 
         mntmEliminarProveedor.setForeground(java.awt.Color.red);
         mntmEliminarProveedor.setText("Eliminar");
         mnProveedores.add(mntmEliminarProveedor);
-
-        jMenuBar1.add(mnProveedores);
-
+        mntmEliminarProveedor.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		miCoordinador.iniciarPantallaEliminarProveedor();
+        	}
+        });
+        
+        jMenuBar1.add(mnImpresoras);
         mnImpresoras.setText("Impresoras");
 
         mntmAgregarNuevaImpresora.setText("Agregar Nueva Impresora");
@@ -99,11 +161,10 @@ public class Inicial extends javax.swing.JFrame {
 
         mntmBajaImpresora.setForeground(java.awt.Color.red);
         mntmBajaImpresora.setText("Dar de Baja Impresora");
-        mnImpresoras.add(mntmBajaImpresora);
+        mnImpresoras.add(mntmBajaImpresora);        
 
-        jMenuBar1.add(mnImpresoras);
-
-        mnInsumosImpresoras.setText("Insumos Impresora ");
+        jMenuBar1.add(mnInsumosImpresoras);
+        mnInsumosImpresoras.setText("Insumos Impresora");
 
         mntmnuevoInsumoImpresora.setText("Nuevos Insumos");
         mnInsumosImpresoras.add(mntmnuevoInsumoImpresora);
@@ -114,8 +175,8 @@ public class Inicial extends javax.swing.JFrame {
         mntmSalidaInsumosImp.setText("Salida Insumos");
         mnInsumosImpresoras.add(mntmSalidaInsumosImp);
 
-        jMenuBar1.add(mnInsumosImpresoras);
-
+       
+        jMenuBar1.add(mnInsumosVarios);
         mnInsumosVarios.setText("Insumos Varios");
 
         mntmNuevoInsumoVarios.setText("Nuevos Insumos");
@@ -126,38 +187,35 @@ public class Inicial extends javax.swing.JFrame {
 
         mntmSalidaInsumosVarios.setText("Salida Insumos");
         mnInsumosVarios.add(mntmSalidaInsumosVarios);
-
-        jMenuBar1.add(mnInsumosVarios);
-
+        
+        jMenuBar1.add(mnEstadisticas);       
         mnEstadisticas.setText("Estadisticas");
 
         mntmStock.setText("Stock");
         mnEstadisticas.add(mntmStock);
 
+        mnEstadisticas.add(mntmmovimientoXProveedor);
         mntmmovimientoXProveedor.setText("Ingresos de Insumos");
 
         mntmingresoPorInsumo.setText("Ingresos por Insumo");
         mntmmovimientoXProveedor.add(mntmingresoPorInsumo);
 
         mntmingresoPorProveedor.setText("Ingresos por Proveedor");
-        mntmmovimientoXProveedor.add(mntmingresoPorProveedor);
-
-        mnEstadisticas.add(mntmmovimientoXProveedor);
+        mntmmovimientoXProveedor.add(mntmingresoPorProveedor);        
 
         mntmmovimientoXInsumo.setText("Salida de Insumos");
+        mnEstadisticas.add(mntmmovimientoXInsumo);
 
         mntmSalidasPorInsumo.setText("Salidas por Insumo");
         mntmmovimientoXInsumo.add(mntmSalidasPorInsumo);
 
         mntmSalidasPorServicio.setText("Salidas por Servicio");
-        mntmmovimientoXInsumo.add(mntmSalidasPorServicio);
-
-        mnEstadisticas.add(mntmmovimientoXInsumo);
+        mntmmovimientoXInsumo.add(mntmSalidasPorServicio);       
 
         mntmConsumidoPeriodo.setText("Consumido en el periodo");
         mnEstadisticas.add(mntmConsumidoPeriodo);
 
-        jMenuBar1.add(mnEstadisticas);
+        
 
         setJMenuBar(jMenuBar1);
 
@@ -181,42 +239,15 @@ public class Inicial extends javax.swing.JFrame {
         pack();
     }
     
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JLabel lblLogo;
-    private javax.swing.JMenu mnEstadisticas;
-    private javax.swing.JMenu mnImpresoras;
-    private javax.swing.JMenu mnInsumosImpresoras;
-    private javax.swing.JMenu mnInsumosVarios;
-    private javax.swing.JMenu mnProveedores;
-    private javax.swing.JMenu mnServicios;
-    private javax.swing.JMenuItem mntmActualizarSerie;
-    private javax.swing.JMenuItem mntmAgregarNuevaImpresora;
-    private javax.swing.JMenuItem mntmAgregarProveedor;
-    private javax.swing.JMenuItem mntmAgregarServicio;
-    private javax.swing.JMenuItem mntmBajaImpresora;
-    private javax.swing.JMenuItem mntmConsumidoPeriodo;
-    private javax.swing.JMenuItem mntmEliminarProveedor;
-    private javax.swing.JMenuItem mntmEntregaImpresoraNueva;
-    private javax.swing.JMenuItem mntmEntregarImpresoraUsada;
-    private javax.swing.JMenuItem mntmIngresoInsumosImp;
-    private javax.swing.JMenuItem mntmIngresoInsumosVarios;
-    private javax.swing.JMenuItem mntmModificarProveedor;
-    private javax.swing.JMenuItem mntmModificarServicio;
-    private javax.swing.JMenuItem mntmNuevoInsumoVarios;
-    private javax.swing.JMenuItem mntmQuitarImpresoraDelServicio;
-    private javax.swing.JMenuItem mntmSalidaInsumosImp;
-    private javax.swing.JMenuItem mntmSalidaInsumosVarios;
-    private javax.swing.JMenuItem mntmSalidasPorInsumo;
-    private javax.swing.JMenuItem mntmSalidasPorServicio;
-    private javax.swing.JMenuItem mntmStock;
-    private javax.swing.JMenuItem mntmingresoPorInsumo;
-    private javax.swing.JMenuItem mntmingresoPorProveedor;
-    private javax.swing.JMenu mntmmovimientoXInsumo;
-    private javax.swing.JMenu mntmmovimientoXProveedor;
-    private javax.swing.JMenuItem mntmnuevoInsumoImpresora;
-    // End of variables declaration//GEN-END:variables
+  
 
     public void setCoodinador(Coordinador miCoordinador) {
         this.miCoordinador = miCoordinador;
     }
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 }
