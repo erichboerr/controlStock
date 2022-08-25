@@ -137,7 +137,7 @@ public class Inicial extends javax.swing.JFrame implements ActionListener{
         mnProveedores.add(mntmEliminarProveedor);
         mntmEliminarProveedor.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		miCoordinador.iniciarPantallaEliminarProveedor();
+        		miCoordinador.iniciarPantallaBajaProveedor();
         	}
         });
         
@@ -168,10 +168,19 @@ public class Inicial extends javax.swing.JFrame implements ActionListener{
 
         mntmnuevoInsumoImpresora.setText("Nuevos Insumos");
         mnInsumosImpresoras.add(mntmnuevoInsumoImpresora);
+        mntmnuevoInsumoImpresora.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		miCoordinador.iniciarPantallaNuevoInsumoImpresora();
+        	}
+        });
 
         mntmIngresoInsumosImp.setText("Ingresar Insumos");
         mnInsumosImpresoras.add(mntmIngresoInsumosImp);
-
+        mntmIngresoInsumosImp.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		miCoordinador.iniciarPantallaIngresoInsumosImp();
+        	}
+        });
         mntmSalidaInsumosImp.setText("Salida Insumos");
         mnInsumosImpresoras.add(mntmSalidaInsumosImp);
 

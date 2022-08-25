@@ -1,4 +1,4 @@
-package com.controlStock.controlStock.igu.Proveedores;
+package com.controlStock.controlStock.igu.proveedores;
 
 import javax.swing.JDialog;
 import javax.swing.JLabel;

@@ -1,82 +1,120 @@
 package com.controlStock.controlStock.principal;
 
+import com.controlStock.controlStock.loggers.*;
+import com.controlStock.controlStock.igu.servicios.*;
 import com.controlStock.controlStock.igu.Inicial;
-import com.controlStock.controlStock.igu.Proveedores.ModificarProveedor;
-import com.controlStock.controlStock.igu.Proveedores.NuevoProveedor;
-import com.controlStock.controlStock.igu.servicios.ModificarServicio;
-import com.controlStock.controlStock.igu.servicios.NuevoServicio;
+import com.controlStock.controlStock.igu.proveedores.*;
+import com.controlStock.controlStock.igu.insumos.*;
 
+public class Coordinador {
 
-public class Coordinador {   
-    
-    private Inicial miPantallaInicial;
-	private NuevoServicio miPpantallaNuevoServicio;
-	private ModificarServicio miPantallaModificarServicio;
-	private NuevoProveedor miPantallaNuevoProveedor;
-	private ModificarProveedor miPantallaModificarProveedor;
-	private ModificarProveedor miPantallaEliminarProveedor;        
+	 	private Inicial miPantallaInicial;
+		private NuevoServicio miPpantallaNuevoServicio;
+		private ModificarServicio miPantallaModificarServicio;
+		private NuevoProveedor miPantallaNuevoProveedor;
+		private ModificarProveedor miPantallaModificarProveedor;
+		private BajaProveedor miPantallaBajaProveedor;
+		private Logs miLogs;
+		private NuevoInsumosImpresora miPantallaNuevoInsumoImpresora;     
+		private IngresoInsumosImp miPantallaIngresoInsumosImp;
 
-    public void setInicial(Inicial miPantallaInicial) {
-       this.miPantallaInicial = miPantallaInicial; 
-    } 
-    
-    public void setmiPantallaNuevoServicio(NuevoServicio miPantallaNuevoServicio) {
-		this.miPpantallaNuevoServicio = miPantallaNuevoServicio;
-			
-	}
-    
-    public void setmiPantallaModificarServicio(ModificarServicio miPantallaModificarServicio) {
-		this.miPantallaModificarServicio = miPantallaModificarServicio;
-			
-	}
-    
-
-	public void setmiPantallaNuevoProveedor(NuevoProveedor miPantallaNuevoProveedor) {
-		this.miPantallaNuevoProveedor = miPantallaNuevoProveedor;
+	    /*************************************************************************/
+		//Visibilidad de Pantallas
 		
-	}
-	
-	public void setmiPantallaModificarProveedor(ModificarProveedor miPantallaModificarProveedor) {
-		this.miPantallaModificarProveedor = miPantallaModificarProveedor;
+		//inicio
+		 public void setInicial(Inicial miPantallaInicial) {
+		       this.miPantallaInicial = miPantallaInicial; 
+		    } 
+		 
+	    public void iniciarPantallaPricipal() {
+	    miPantallaInicial.setVisible(true);
+	    }
+
+	    /*************************************************************************/
+	    //servicios
+	    public void setmiPantallaNuevoServicio(NuevoServicio miPantallaNuevoServicio) {
+			this.miPpantallaNuevoServicio = miPantallaNuevoServicio;				
+		}
+	    public void iniciarPantallaNuevoServicio() {
+	    	miPpantallaNuevoServicio.setVisible(true);
+	    }
+	    
+	    public void setmiPantallaModificarServicio(ModificarServicio miPantallaModificarServicio) {
+			this.miPantallaModificarServicio = miPantallaModificarServicio;				
+		}
+
+		public void iniciarPantallaModificarServicio() {
+			miPantallaModificarServicio.setVisible(true);			
+		}
 		
-	}
-	
-	public void setmiPantallaEliminarProveedor(ModificarProveedor miPantallaEliminarProveedor) {
-		this.miPantallaEliminarProveedor = miPantallaEliminarProveedor;
+	    /*************************************************************************/
+		//Proveedores
+		public void setmiPantallaNuevoProveedor(NuevoProveedor miPantallaNuevoProveedor) {
+			this.miPantallaNuevoProveedor = miPantallaNuevoProveedor;			
+		}
 		
-	}
-    
-    /*************************************************************************/
-    public void iniciarPantallaPricipal() {
-    miPantallaInicial.setVisible(true);
-    }
+		public void iniciarPantallaNuevoProveedor() {
+			miPantallaNuevoProveedor.setVisible(true);			
+		}
 
-    public void iniciarPantallaNuevoServicio() {
-    	miPpantallaNuevoServicio.setVisible(true);;
-    }
-
-	public void iniciarPantallaModificarServicio() {
-		miPantallaModificarServicio.setVisible(true);
+		public void setmiPantallaModificarProveedor(ModificarProveedor miPantallaModificarProveedor) {
+			this.miPantallaModificarProveedor = miPantallaModificarProveedor;			
+		}
 		
-	}
+		public void iniciarPantallaModificarProveedor() {
+			miPantallaModificarProveedor.setVisible(true);			
+		}
 
-	public void iniciarPantallaNuevoProveedor() {
-		miPantallaNuevoProveedor.setVisible(true);
+		public void setmiPantallaBajaProveedor(BajaProveedor miPantallaBajaProveedor) {
+			this.miPantallaBajaProveedor = miPantallaBajaProveedor;			
+		}
 		
-	}
-
-	public void iniciarPantallaModificarProveedor() {
-		miPantallaModificarProveedor.setVisible(true);
+		public void iniciarPantallaBajaProveedor() {
+			miPantallaBajaProveedor.setVisible(true);			
+		}
 		
-	}
-
-	public void iniciarPantallaEliminarProveedor() {
-		miPantallaEliminarProveedor.setVisible(true);
+	    /*************************************************************************/
+		//Impresoras
 		
-	}
+	    /*************************************************************************/
+		//Insumos Impresoras
+		public void setmiPantallaNuevoInsumoImpresora(NuevoInsumosImpresora miPantallaNuevoInsumoImpresora) {
+			this.miPantallaNuevoInsumoImpresora = miPantallaNuevoInsumoImpresora;			
+		}
+		public void iniciarPantallaNuevoInsumoImpresora() {
+			miPantallaNuevoInsumoImpresora.setVisible(true);			
+		}
+		
+		public void setmiPantallaIngresoInsumosImp(IngresoInsumosImp miPantallaIngresoInsumosImp) {
+			this.miPantallaIngresoInsumosImp = miPantallaIngresoInsumosImp;			
+		}
+		public void iniciarPantallaIngresoInsumosImp() {
+			miPantallaIngresoInsumosImp.setVisible(true);			
+		}
+		
+	    /*************************************************************************/
+		//Insumos Varios
+		
+	    /*************************************************************************/
+		//logs		
+		public void setmiLogs(Logs miLogs) {
+			this.miLogs = miLogs;
+		}
+		
+		public void cargaErrores(String error) {
+			miLogs.cargarArchivo(error);
+		}
 
+		
 
-	
-	
-	
+		
+		
+	    /*************************************************************************/
+		//DAO
+		
+	    /*************************************************************************/
+		//DTO
+		
+	    /*************************************************************************/
+
 }
