@@ -1,4 +1,4 @@
-package com.controlStock.controlStock.igu.insumos;
+package com.controlStock.controlStock.igu.impresoras;
 
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -31,7 +31,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 
-public class PantallaNuevaImpresora extends JDialog implements ActionListener {
+public class NuevaImpresora extends JDialog implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private JLabel lblTxttitulo;
@@ -83,7 +83,7 @@ public class PantallaNuevaImpresora extends JDialog implements ActionListener {
 
 	//CargaComboBox cmb = new CargaComboBox();
 
-	public PantallaNuevaImpresora() {
+	public NuevaImpresora() {
 		setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
 		getContentPane().setFocusable(false);
 		setMinimumSize(new Dimension(390, 490));
@@ -158,7 +158,7 @@ public class PantallaNuevaImpresora extends JDialog implements ActionListener {
 		btnAgregarMarca.setSize(new Dimension(24, 24));
 		btnAgregarMarca.setToolTipText("Agregar nueva Marca de Impresora");
 		btnAgregarMarca
-				.setIcon(new ImageIcon(PantallaNuevaImpresora.class.getResource("/com/controlStock/controlStock/icons/añadir-48px.png")));
+				.setIcon(new ImageIcon(NuevaImpresora.class.getResource("/com/controlStock/controlStock/icons/añadir-48px.png")));
 		btnAgregarMarca.setBounds(340, 80, 24, 24);
 		getContentPane().add(btnAgregarMarca);
 		btnAgregarMarca.addMouseListener(new MouseAdapter() {
@@ -236,7 +236,7 @@ public class PantallaNuevaImpresora extends JDialog implements ActionListener {
 		btnagregarModelo = new JButton("");
 		btnagregarModelo.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnagregarModelo
-				.setIcon(new ImageIcon(PantallaNuevaImpresora.class.getResource("/com/controlStock/controlStock/icons/añadir-48px.png")));
+				.setIcon(new ImageIcon(NuevaImpresora.class.getResource("/com/controlStock/controlStock/icons/añadir-48px.png")));
 		btnagregarModelo.setToolTipText("Agregar nuevo modelo de Impresora");
 		btnagregarModelo.setSize(new Dimension(24, 24));
 		btnagregarModelo.setPreferredSize(new Dimension(24, 24));
@@ -348,7 +348,7 @@ public class PantallaNuevaImpresora extends JDialog implements ActionListener {
 
 		btnAddIsumo = new JButton("");
 		btnAddIsumo.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnAddIsumo.setIcon(new ImageIcon(PantallaNuevaImpresora.class.getResource("/com/controlStock/controlStock/icons/añadir-48px.png")));
+		btnAddIsumo.setIcon(new ImageIcon(NuevaImpresora.class.getResource("/com/controlStock/controlStock/icons/añadir-48px.png")));
 		btnAddIsumo.setToolTipText("Agregar nuevo insumo para el modelo de Impresora");
 		btnAddIsumo.setSize(new Dimension(24, 24));
 		btnAddIsumo.setPreferredSize(new Dimension(24, 24));
@@ -434,7 +434,7 @@ public class PantallaNuevaImpresora extends JDialog implements ActionListener {
 
 		btnAddIsumo2 = new JButton("");
 		btnAddIsumo2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnAddIsumo2.setIcon(new ImageIcon(PantallaNuevaImpresora.class.getResource("/com/controlStock/controlStock/icons/añadir-48px.png")));
+		btnAddIsumo2.setIcon(new ImageIcon(NuevaImpresora.class.getResource("/com/controlStock/controlStock/icons/añadir-48px.png")));
 		btnAddIsumo2.setToolTipText("Agregar nuevo insumo para el modelo de Impresora");
 		btnAddIsumo2.setSize(new Dimension(24, 24));
 		btnAddIsumo2.setPreferredSize(new Dimension(24, 24));
@@ -510,7 +510,7 @@ public class PantallaNuevaImpresora extends JDialog implements ActionListener {
 
 		btnAddIsumo3 = new JButton("");
 		btnAddIsumo3.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnAddIsumo3.setIcon(new ImageIcon(PantallaNuevaImpresora.class.getResource("/com/controlStock/controlStock/icons/añadir-48px.png")));
+		btnAddIsumo3.setIcon(new ImageIcon(NuevaImpresora.class.getResource("/com/controlStock/controlStock/icons/añadir-48px.png")));
 		btnAddIsumo3.setToolTipText("Agregar nuevo insumo para el modelo de Impresora");
 		btnAddIsumo3.setSize(new Dimension(24, 24));
 		btnAddIsumo3.setPreferredSize(new Dimension(24, 24));
@@ -578,7 +578,7 @@ public class PantallaNuevaImpresora extends JDialog implements ActionListener {
 
 		btnAddIsumo4 = new JButton("");
 		btnAddIsumo4.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnAddIsumo4.setIcon(new ImageIcon(PantallaNuevaImpresora.class.getResource("/com/controlStock/controlStock/icons/añadir-48px.png")));
+		btnAddIsumo4.setIcon(new ImageIcon(NuevaImpresora.class.getResource("/com/controlStock/controlStock/icons/añadir-48px.png")));
 		btnAddIsumo4.setToolTipText("Agregar nuevo insumo para el modelo de Impresora");
 		btnAddIsumo4.setSize(new Dimension(24, 24));
 		btnAddIsumo4.setPreferredSize(new Dimension(24, 24));
@@ -638,7 +638,7 @@ public class PantallaNuevaImpresora extends JDialog implements ActionListener {
 
 		btnAddIsumo5 = new JButton("");
 		btnAddIsumo5.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnAddIsumo5.setIcon(new ImageIcon(PantallaNuevaImpresora.class.getResource("/com/controlStock/controlStock/icons/añadir-48px.png")));
+		btnAddIsumo5.setIcon(new ImageIcon(NuevaImpresora.class.getResource("/com/controlStock/controlStock/icons/añadir-48px.png")));
 		btnAddIsumo5.setToolTipText("Agregar nuevo insumo para el modelo de Impresora");
 		btnAddIsumo5.setSize(new Dimension(24, 24));
 		btnAddIsumo5.setPreferredSize(new Dimension(24, 24));
@@ -689,7 +689,7 @@ public class PantallaNuevaImpresora extends JDialog implements ActionListener {
 
 		btnAddIsumo6 = new JButton("");
 		btnAddIsumo6.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnAddIsumo6.setIcon(new ImageIcon(PantallaNuevaImpresora.class.getResource("/com/controlStock/controlStock/icons/añadir-48px.png")));
+		btnAddIsumo6.setIcon(new ImageIcon(NuevaImpresora.class.getResource("/com/controlStock/controlStock/icons/añadir-48px.png")));
 		btnAddIsumo6.setToolTipText("Agregar nuevo insumo para el modelo de Impresora");
 		btnAddIsumo6.setSize(new Dimension(24, 24));
 		btnAddIsumo6.setPreferredSize(new Dimension(24, 24));
@@ -714,7 +714,7 @@ public class PantallaNuevaImpresora extends JDialog implements ActionListener {
 		btnCancelar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnCancelar.setFocusPainted(false);
 		btnCancelar.setFocusable(false);
-		btnCancelar.setIcon(new ImageIcon(PantallaNuevaImpresora.class.getResource("/com/controlStock/controlStock/icons/cerrar-ventana-48px.png")));
+		btnCancelar.setIcon(new ImageIcon(NuevaImpresora.class.getResource("/com/controlStock/controlStock/icons/cerrar-ventana-48px.png")));
 		btnCancelar.setMaximumSize(new Dimension(48, 48));
 		btnCancelar.setMinimumSize(new Dimension(48, 48));
 		btnCancelar.setPreferredSize(new Dimension(48, 48));
@@ -732,7 +732,7 @@ public class PantallaNuevaImpresora extends JDialog implements ActionListener {
 		btnAceptar = new JButton("");
 		btnAceptar.setContentAreaFilled(false);
 		btnAceptar.setAlignmentX(Component.CENTER_ALIGNMENT);
-		btnAceptar.setIcon(new ImageIcon(PantallaNuevaImpresora.class.getResource("/com/controlStock/controlStock/icons/aceptar-48px.png")));
+		btnAceptar.setIcon(new ImageIcon(NuevaImpresora.class.getResource("/com/controlStock/controlStock/icons/aceptar-48px.png")));
 		btnAceptar.setFocusPainted(false);
 		btnAceptar.setFocusable(false);
 		btnAceptar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));

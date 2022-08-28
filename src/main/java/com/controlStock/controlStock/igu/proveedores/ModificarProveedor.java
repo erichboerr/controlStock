@@ -8,13 +8,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
+
+import com.controlStock.controlStock.logicaSistema.CargaComboBox;
 import com.controlStock.controlStock.principal.Coordinador;
 import java.awt.Component;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Dimension;
 import javax.swing.ImageIcon;
-import javax.swing.JCheckBox;
 import java.awt.Cursor;
 import javax.swing.JComboBox;
 
@@ -30,14 +31,13 @@ public class ModificarProveedor extends JDialog implements ActionListener {
 	private JLabel lblTelefono;
 	private JLabel lblRaznSocial;
 	private Coordinador miCoordinador;
-	private JCheckBox chckbxHabilitado;
 	private JComboBox<String> cmbProveedor;
 
 	public void setCoordinador(Coordinador miCoordinador) {
 		this.miCoordinador = miCoordinador;
 	}
 
-	//CargaComboBox cmb = new CargaComboBox();
+	CargaComboBox cmb = new CargaComboBox();
 
 	public ModificarProveedor() {
 		getContentPane().setMinimumSize(new Dimension(540, 250));
@@ -86,9 +86,19 @@ public class ModificarProveedor extends JDialog implements ActionListener {
 		getContentPane().add(txtEmail);
 		txtEmail.setColumns(10);
 
+		cmbProveedor = new JComboBox<String>();
+		cmbProveedor.setFocusable(false);
+		cmbProveedor.setToolTipText("Seleccione El Proveedor a editar");
+		cmbProveedor.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		cmbProveedor.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		cmbProveedor.setBounds(90, 50, 424, 23);
+		getContentPane().add(cmbProveedor);
+		cmb.cargarCmbProveedor(cmbProveedor);
+		cmbProveedor.insertItemAt("Seleccione un Proveedor", 0);
+		cmbProveedor.setSelectedIndex(0);
+	
 		btnAceptar = new JButton("");
 		btnAceptar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnAceptar.setEnabled(false);
 		btnAceptar.setIcon(new ImageIcon(ModificarProveedor.class.getResource("/com/controlStock/controlStock/icons/aceptar-48px.png")));
 		btnAceptar.setFocusable(false);
 		btnAceptar.setFocusPainted(false);
@@ -117,62 +127,18 @@ public class ModificarProveedor extends JDialog implements ActionListener {
 		getContentPane().add(btnCancelar);
 		btnCancelar.addActionListener(this);
 
-		chckbxHabilitado = new JCheckBox("Habilitado");
-		chckbxHabilitado.setEnabled(false);
-		chckbxHabilitado.setFocusable(false);
-		chckbxHabilitado.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		chckbxHabilitado.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		chckbxHabilitado.setBounds(10, 160, 97, 23);
-		getContentPane().add(chckbxHabilitado);
-
-		cmbProveedor = new JComboBox<String>();
-		cmbProveedor.setFocusable(false);
-		cmbProveedor.setToolTipText("Seleccione El Proveedor a editar");
-		cmbProveedor.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		cmbProveedor.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		cmbProveedor.setBounds(90, 50, 424, 23);
-		getContentPane().add(cmbProveedor);
-		//cmb.cargarCmbProveedor(cmbProveedor);
-		cmbProveedor.insertItemAt("Seleccione un Proveedor", 0);
-		cmbProveedor.setSelectedIndex(0);
-		cmbProveedor.addActionListener(this);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		/*if (e.getSource() == cmbProveedor) {
+		if (e.getSource() == btnAceptar) {			
+			// verifico que no este vacio el campo del nombre
 			if (cmbProveedor.getSelectedIndex() > 0) {
-				txtEmail.setEditable(true);
-				txtTelefono.setEditable(true);
-				int id = miCoordinador.idProveedor(cmbProveedor);
-				ProveedoresDTO miProveedor = new ProveedoresDTO();
-				miProveedor = miCoordinador.BuscarProveedor(id);
-				txtEmail.setText(miProveedor.getEmail());
-				txtTelefono.setText(miProveedor.getTelefono());
-				btnAceptar.setEnabled(true);
-				chckbxHabilitado.setEnabled(true);
-				if (miProveedor.getFlagHabilitado() == 1) {
-					chckbxHabilitado.setSelected(true);
-				} else {
-					chckbxHabilitado.setSelected(false);
-				}
-			} else {
-				limpiar();
-			}
-		}
-
-		if (e.getSource() == btnAceptar) {
-			// logica de guardar
-			if (cmbProveedor.getSelectedIndex() > 0) {// verifico que no este vacio el campo del nombre
-				if (miCoordinador.actualizarProveedor(txtTelefono, txtEmail, cmbProveedor, chckbxHabilitado)) {// cargo
-																												// en la
-																												// BD la
-																												// actualizacion
-																												// del
-					dispose();																					// Servicio
+				// cargo en la BD la actualizacion del Servicio
+				if (miCoordinador.actualizarProveedor(txtTelefono, txtEmail, cmbProveedor)) {	 
+					dispose();																					 
 					JOptionPane.showMessageDialog(null, "Proveedor Actualizado con Exito");
-					limpiar();
-					
+					limpiar();					
 				} else {
 					JOptionPane.showMessageDialog(null, "El Proveedor no se pudo Actualizar", "Advertencia",
 							JOptionPane.WARNING_MESSAGE);
@@ -185,22 +151,12 @@ public class ModificarProveedor extends JDialog implements ActionListener {
 		if (e.getSource() == btnCancelar) {
 			limpiar();
 			dispose();
-		}*/
-
+		}
 	}
 
 	private void limpiar() {
-		//cmb.cargarCmbProveedor(cmbProveedor);
-		cmbProveedor.insertItemAt("Seleccione un Proveedor", 0);
-		cmbProveedor.setSelectedIndex(0);
-		
+		cmbProveedor.setSelectedIndex(0);		
 		txtEmail.setText("");
 		txtTelefono.setText("");
-		chckbxHabilitado.setSelected(false);
-		txtEmail.setEditable(false);
-		txtTelefono.setEditable(false);
-
-		btnAceptar.setEnabled(false);
-		chckbxHabilitado.setEnabled(false);
 	}
 }

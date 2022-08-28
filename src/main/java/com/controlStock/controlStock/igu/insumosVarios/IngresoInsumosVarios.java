@@ -1,4 +1,4 @@
-package com.controlStock.controlStock.igu.insumos;
+package com.controlStock.controlStock.igu.insumosVarios;
 
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -31,7 +31,7 @@ import java.util.List;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class PantallaIngresoInsumosVarios extends JDialog implements ActionListener {
+public class IngresoInsumosVarios extends JDialog implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private JLabel lblTitulo;
@@ -79,7 +79,7 @@ public class PantallaIngresoInsumosVarios extends JDialog implements ActionListe
 	private JTextField txtoc;
 	private JLabel lblOrdenDeCompra;
 
-	public PantallaIngresoInsumosVarios() {
+	public IngresoInsumosVarios() {
 		setMinimumSize(new Dimension(380, 550));
 		setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
 		setTitle("Ingreso de Insumos");
@@ -548,7 +548,7 @@ public class PantallaIngresoInsumosVarios extends JDialog implements ActionListe
 
 		btnAceptar = new JButton("");
 		btnAceptar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnAceptar.setIcon(new ImageIcon(PantallaIngresoInsumosVarios.class.getResource("/com/controlStock/controlStock/icons/aceptar-48px.png")));
+		btnAceptar.setIcon(new ImageIcon(IngresoInsumosVarios.class.getResource("/com/controlStock/controlStock/icons/aceptar-48px.png")));
 		btnAceptar.setFocusable(false);
 		btnAceptar.setFocusPainted(false);
 		btnAceptar.setContentAreaFilled(false);
@@ -561,7 +561,7 @@ public class PantallaIngresoInsumosVarios extends JDialog implements ActionListe
 
 		btnCancelar = new JButton("");
 		btnCancelar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnCancelar.setIcon(new ImageIcon(PantallaIngresoInsumosVarios.class.getResource("/com/controlStock/controlStock/icons/cerrar-ventana-48px.png")));
+		btnCancelar.setIcon(new ImageIcon(IngresoInsumosVarios.class.getResource("/com/controlStock/controlStock/icons/cerrar-ventana-48px.png")));
 		btnCancelar.setSize(new Dimension(48, 48));
 		btnCancelar.setPreferredSize(new Dimension(48, 48));
 		btnCancelar.setMinimumSize(new Dimension(48, 48));
@@ -579,7 +579,7 @@ public class PantallaIngresoInsumosVarios extends JDialog implements ActionListe
 		btnNuevoInsumo = new JButton("");
 		btnNuevoInsumo.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnNuevoInsumo.setToolTipText("Agregar nuevo Insumo");
-		btnNuevoInsumo.setIcon(new ImageIcon(PantallaIngresoInsumosVarios.class.getResource("/iconos/a\u00F1adir-48px.png")));
+		btnNuevoInsumo.setIcon(new ImageIcon(IngresoInsumosVarios.class.getResource("/com/controlStock/controlStock/icons/añadir-48px.png")));
 		btnNuevoInsumo.setFocusable(false);
 		btnNuevoInsumo.setFocusPainted(false);
 		btnNuevoInsumo.setContentAreaFilled(false);

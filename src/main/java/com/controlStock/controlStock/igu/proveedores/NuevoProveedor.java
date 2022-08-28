@@ -2,6 +2,7 @@ package com.controlStock.controlStock.igu.proveedores;
 
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -123,11 +124,14 @@ public class NuevoProveedor extends JDialog implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		/*if (e.getSource() == btnAceptar) {
-			if (!txtRazonsocial.getText().equals("")) {// verifico que no este vacio el campo del nombre
-				if (!miCoordinador.existeProveedor(txtRazonsocial)) {// verifico que no exista ya cargado en BD
-					if (miCoordinador.nuevoProveedor(txtRazonsocial, txtTelefono, txtEmail)) {// cargo en la BD el nuevo
-						dispose();																		// Servicio
+		if (e.getSource() == btnAceptar) {
+			// verifico que no este vacio el campo del nombre
+			if (!txtRazonsocial.getText().equals("")) {
+				// verifico que no exista ya cargado en BD
+				if (!miCoordinador.existeProveedor(txtRazonsocial)) {
+					// cargo en la BD el nuevo Proveedor
+					if (miCoordinador.nuevoProveedor(txtRazonsocial, txtTelefono, txtEmail)) {
+						dispose();																		
 						JOptionPane.showMessageDialog(null, "Proveedor agregado con exito");
 						limpiar();
 						
@@ -149,7 +153,7 @@ public class NuevoProveedor extends JDialog implements ActionListener {
 		if (e.getSource() == btnCancelar) {
 			limpiar();
 			dispose();
-		}*/
+		}
 	}
 
 	private void limpiar() {

@@ -103,8 +103,7 @@ public class ProveedoresDAO {
 	}
 
 	// Actauliza los datos del proveedor
-	public boolean actualizarProveedor(JTextField txtTelefono, JTextField txtEmail, JComboBox<String> cmbProveedor,
-			JCheckBox chckbxHabilitado) {
+	public boolean actualizarProveedor(JTextField txtTelefono, JTextField txtEmail, JComboBox<String> cmbProveedor) {
 		int reg = 0;
 		exito = false;
 		idProveedor = idProveedor(cmbProveedor);
@@ -138,33 +137,8 @@ public class ProveedoresDAO {
 			exito = true;
 		} else {
 			exito = false;
-		}
-		if (chckbxHabilitado.isSelected()) {
-			sql = "UPDATE t_proveedor set flagHabilitado = ? Where id = " + idProveedor;
-			try {
-				pst = conn.prepareStatement(sql);
-				pst.setInt(1, 1);
-				reg = pst.executeUpdate();
-			} catch (SQLException e) {
-				error = "(ProveedorDAO = 152) Error al actualizar el flagHabilitado 'Habilitado': " + e.getMessage();
-				miCoordinador.cargaErrores(error);
-			}
-		} else {
-			sql = "UPDATE t_proveedor set flagHabilitado = ? Where id = " + idProveedor;
-			try {
-				pst = conn.prepareStatement(sql);
-				pst.setInt(1, 0);
-				reg = pst.executeUpdate();
-			} catch (SQLException e) {
-				error = "(ProveedorDAO 159) Error al actualizar el flagHabilitado 'Habilitado': " + e.getMessage();
-				miCoordinador.cargaErrores(error);
-			}
-		}
-		if (reg == 1) {
-			exito = true;
-		} else {
-			exito = false;
-		}
+		}		
+		
 		return exito;
 	}
 

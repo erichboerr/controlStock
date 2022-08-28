@@ -1,4 +1,4 @@
-package com.controlStock.controlStock.igu.insumos;
+package com.controlStock.controlStock.igu.impresoras;
 
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -22,7 +22,7 @@ import javax.swing.JComboBox;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class PantallaModelo extends JDialog implements ActionListener {
+public class ModeloImpresora extends JDialog implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private JTextField txtModelo;
@@ -40,7 +40,7 @@ public class PantallaModelo extends JDialog implements ActionListener {
 
 	//CargaComboBox cmb = new CargaComboBox();
 
-	public PantallaModelo() {
+	public ModeloImpresora() {
 		setResizable(false);
 		getContentPane().setMinimumSize(new Dimension(460, 200));
 		setSize(new Dimension(460, 200));
@@ -94,7 +94,7 @@ public class PantallaModelo extends JDialog implements ActionListener {
 
 		btnAceptar = new JButton("");
 		btnAceptar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnAceptar.setIcon(new ImageIcon(PantallaModelo.class.getResource("/com/controlStock/controlStock/icons/aceptar-48px.png")));
+		btnAceptar.setIcon(new ImageIcon(ModeloImpresora.class.getResource("/com/controlStock/controlStock/icons/aceptar-48px.png")));
 		btnAceptar.setFocusable(false);
 		btnAceptar.setFocusPainted(false);
 		btnAceptar.setContentAreaFilled(false);
@@ -107,7 +107,7 @@ public class PantallaModelo extends JDialog implements ActionListener {
 
 		btnCancelar = new JButton("");
 		btnCancelar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnCancelar.setIcon(new ImageIcon(PantallaModelo.class.getResource("/com/controlStock/controlStock/icons/cerrar-ventana-48px.png")));
+		btnCancelar.setIcon(new ImageIcon(ModeloImpresora.class.getResource("/com/controlStock/controlStock/icons/cerrar-ventana-48px.png")));
 		btnCancelar.setSize(new Dimension(48, 48));
 		btnCancelar.setPreferredSize(new Dimension(48, 48));
 		btnCancelar.setMinimumSize(new Dimension(48, 48));

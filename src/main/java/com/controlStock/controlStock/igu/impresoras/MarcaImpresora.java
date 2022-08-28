@@ -1,4 +1,4 @@
-package com.controlStock.controlStock.igu.insumos;
+package com.controlStock.controlStock.igu.impresoras;
 
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -16,7 +16,7 @@ import javax.swing.JButton;
 import java.awt.Dimension;
 import javax.swing.ImageIcon;
 
-public class PantallaMarca extends JDialog implements ActionListener {
+public class MarcaImpresora extends JDialog implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private JTextField txtMarca;
@@ -31,7 +31,7 @@ public class PantallaMarca extends JDialog implements ActionListener {
 		this.miCoordinador = miCoordinador;
 	}
 
-	public PantallaMarca() {
+	public MarcaImpresora() {
 		setPreferredSize(new Dimension(460, 170));
 		setModal(true);
 		setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
@@ -64,7 +64,7 @@ public class PantallaMarca extends JDialog implements ActionListener {
 
 		btnAceptar = new JButton("");
 		btnAceptar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnAceptar.setIcon(new ImageIcon(PantallaMarca.class.getResource("/com/controlStock/controlStock/icons/aceptar-48px.png")));
+		btnAceptar.setIcon(new ImageIcon(MarcaImpresora.class.getResource("/com/controlStock/controlStock/icons/aceptar-48px.png")));
 		btnAceptar.setFocusable(false);
 		btnAceptar.setFocusPainted(false);
 		btnAceptar.setContentAreaFilled(false);
@@ -77,7 +77,7 @@ public class PantallaMarca extends JDialog implements ActionListener {
 
 		btnCancelar = new JButton("");
 		btnCancelar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnCancelar.setIcon(new ImageIcon(PantallaMarca.class.getResource("/com/controlStock/controlStock/icons/cerrar-ventana-48px.png")));
+		btnCancelar.setIcon(new ImageIcon(MarcaImpresora.class.getResource("/com/controlStock/controlStock/icons/cerrar-ventana-48px.png")));
 		btnCancelar.setSize(new Dimension(48, 48));
 		btnCancelar.setPreferredSize(new Dimension(48, 48));
 		btnCancelar.setMinimumSize(new Dimension(48, 48));

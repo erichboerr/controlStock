@@ -1,4 +1,4 @@
-package com.controlStock.controlStock.igu.insumos;
+package com.controlStock.controlStock.igu.insumosVarios;
 
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -45,7 +45,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class PantallaSalidaInsumosVarios extends JDialog implements ActionListener {
+public class SalidaInsumosVarios extends JDialog implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private JLabel lblTitulo;
@@ -94,7 +94,7 @@ public class PantallaSalidaInsumosVarios extends JDialog implements ActionListen
 	private String insumo4;
 	private String insumo5;
 
-	public PantallaSalidaInsumosVarios() {
+	public SalidaInsumosVarios() {
 		setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
 		setMinimumSize(new Dimension(500, 410));
 		setResizable(false);
@@ -566,7 +566,7 @@ public class PantallaSalidaInsumosVarios extends JDialog implements ActionListen
 		});
 
 		btnAceptar = new JButton("");
-		btnAceptar.setIcon(new ImageIcon(PantallaSalidaInsumosVarios.class.getResource("/com/controlStock/controlStock/icons/aceptar-48px.png")));
+		btnAceptar.setIcon(new ImageIcon(SalidaInsumosVarios.class.getResource("/com/controlStock/controlStock/icons/aceptar-48px.png")));
 		btnAceptar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnAceptar.setFocusable(false);
 		btnAceptar.setFocusPainted(false);
@@ -579,7 +579,7 @@ public class PantallaSalidaInsumosVarios extends JDialog implements ActionListen
 		btnAceptar.addActionListener(this);
 
 		btnCancelar = new JButton("");
-		btnCancelar.setIcon(new ImageIcon(PantallaSalidaInsumosVarios.class.getResource("/com/controlStock/controlStock/icons/cerrar-ventana-48px.png")));
+		btnCancelar.setIcon(new ImageIcon(SalidaInsumosVarios.class.getResource("/com/controlStock/controlStock/icons/cerrar-ventana-48px.png")));
 		btnCancelar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnCancelar.setSize(new Dimension(48, 48));
 		btnCancelar.setPreferredSize(new Dimension(48, 48));

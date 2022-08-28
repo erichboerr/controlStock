@@ -1,4 +1,4 @@
-package com.controlStock.controlStock.igu.insumos;
+package com.controlStock.controlStock.igu.insumosImpresoras;
 
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -55,7 +55,6 @@ public class IngresoInsumosImp extends JDialog implements ActionListener {
 	private JLabel lblProveedor;
 	private JTextField txtCantidad9;
 	private JComboBox<String> cmbTipo9;
-	private JButton btnNuevoInsumo;
 	private List<List<Integer>> listaInsumos;
 	private Coordinador miCoordinador;
 
@@ -554,7 +553,7 @@ public class IngresoInsumosImp extends JDialog implements ActionListener {
 		btnAceptar.setBorderPainted(false);
 		btnAceptar.setBorder(null);
 		btnAceptar.setAlignmentX(0.5f);
-		btnAceptar.setBounds(227, 460, 48, 48);
+		btnAceptar.setBounds(227, 448, 48, 48);
 		getContentPane().add(btnAceptar);
 		btnAceptar.addActionListener(this);
 
@@ -571,22 +570,9 @@ public class IngresoInsumosImp extends JDialog implements ActionListener {
 		btnCancelar.setBorderPainted(false);
 		btnCancelar.setBorder(null);
 		btnCancelar.setAlignmentX(0.5f);
-		btnCancelar.setBounds(299, 460, 48, 48);
+		btnCancelar.setBounds(296, 448, 48, 48);
 		getContentPane().add(btnCancelar);
 		btnCancelar.addActionListener(this);
-
-		btnNuevoInsumo = new JButton("");
-		btnNuevoInsumo.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnNuevoInsumo.setToolTipText("Agregar nuevo Insumo");
-		btnNuevoInsumo.setIcon(new ImageIcon(IngresoInsumosImp.class.getResource("/iconos/a\u00F1adir-48px.png")));
-		btnNuevoInsumo.setFocusable(false);
-		btnNuevoInsumo.setFocusPainted(false);
-		btnNuevoInsumo.setContentAreaFilled(false);
-		btnNuevoInsumo.setBorderPainted(false);
-		btnNuevoInsumo.setBorder(null);
-		btnNuevoInsumo.setAlignmentX(0.5f);
-		btnNuevoInsumo.setBounds(10, 460, 48, 48);
-		getContentPane().add(btnNuevoInsumo);
 		
 		lblOrdenDeCompra = new JLabel("Orden de Compra: ");
 		lblOrdenDeCompra.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -597,7 +583,6 @@ public class IngresoInsumosImp extends JDialog implements ActionListener {
 		txtoc.setBounds(114, 88, 230, 22);
 		getContentPane().add(txtoc);
 		txtoc.setColumns(10);
-		btnNuevoInsumo.addActionListener(this);
 
 	}
 
@@ -629,11 +614,7 @@ public class IngresoInsumosImp extends JDialog implements ActionListener {
 				JOptionPane.showMessageDialog(null, "Debe seleccionar unProveedor ", "Advertencia",
 						JOptionPane.ERROR_MESSAGE);
 			}
-		}
-
-		if (e.getSource() == btnNuevoInsumo) {
-			miCoordinador.miPantallaInsumos();
-		}*/
+		}*/		
 	}
 
 	private void limpiar() {

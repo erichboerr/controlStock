@@ -3,12 +3,14 @@ package com.controlStock.controlStock.igu.proveedores;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
+
+import com.controlStock.controlStock.logicaSistema.CargaComboBox;
+import com.controlStock.controlStock.logicaSistema.DTO.ProveedoresDTO;
 import com.controlStock.controlStock.principal.Coordinador;
 import java.awt.Component;
 import javax.swing.JTextField;
@@ -38,7 +40,7 @@ public class BajaProveedor extends JDialog implements ActionListener {
 		this.miCoordinador = miCoordinador;
 	}
 
-	//CargaComboBox cmb = new CargaComboBox();
+	CargaComboBox cmb = new CargaComboBox();
 
 	public BajaProveedor() {
 		getContentPane().setMinimumSize(new Dimension(540, 270));
@@ -137,7 +139,7 @@ public class BajaProveedor extends JDialog implements ActionListener {
 		cmbProveedor.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		cmbProveedor.setBounds(90, 50, 425, 23);
 		getContentPane().add(cmbProveedor);
-		//cmb.cargarCmbProveedor(cmbProveedor);
+		cmb.cargarCmbProveedor(cmbProveedor);
 		cmbProveedor.insertItemAt("Seleccione un Proveedor", 0);
 		cmbProveedor.setSelectedIndex(0);
 		cmbProveedor.addActionListener(this);
@@ -145,7 +147,7 @@ public class BajaProveedor extends JDialog implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		/*if (e.getSource() == cmbProveedor) {
+		if (e.getSource() == cmbProveedor) {
 			if (cmbProveedor.getSelectedIndex() > 0) {
 				int id = miCoordinador.idProveedor(cmbProveedor);
 				ProveedoresDTO miProveedor = new ProveedoresDTO();
@@ -166,10 +168,10 @@ public class BajaProveedor extends JDialog implements ActionListener {
 		}
 
 		// logica de guardar
-		if (e.getSource() == btnAceptar) {
-			// logica de guardar
+		if (e.getSource() == btnAceptar) {			
 			if (!chckbxHabilitado.isEnabled()) {
-				if (cmbProveedor.getSelectedIndex() > 0) {// verifico que no este vacio el campo del nombre
+				// verifico que no este vacio el campo del nombre
+				if (cmbProveedor.getSelectedIndex() > 0) {
 					if (miCoordinador.bajaProveedor(cmbProveedor, chckbxHabilitado)) {
 						dispose();
 						JOptionPane.showMessageDialog(null, "Proveedor dado de baja");
@@ -192,7 +194,7 @@ public class BajaProveedor extends JDialog implements ActionListener {
 		if (e.getSource() == btnCancelar) {
 			limpiar();
 			dispose();
-		}*/
+		}
 	}
 
 	private void limpiar() {

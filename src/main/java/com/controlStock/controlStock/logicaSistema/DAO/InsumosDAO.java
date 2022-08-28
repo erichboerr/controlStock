@@ -436,8 +436,6 @@ public class InsumosDAO {
 		return exito;
 	}
 	
-
-
 	public boolean agregarNuevaImpresora(InsumosDTO miInsumo) {
 		exito = false;
 
@@ -1022,8 +1020,6 @@ public class InsumosDAO {
 		return exito;
 	}
 	
-	
-
 	public boolean egresoDeInsumos(InsumosDTO miInsumo) {
 		exito = false;
 		int idServicio = 0;

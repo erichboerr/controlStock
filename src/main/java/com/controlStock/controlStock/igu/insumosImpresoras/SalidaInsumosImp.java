@@ -1,4 +1,4 @@
-package com.controlStock.controlStock.igu.insumos;
+package com.controlStock.controlStock.igu.insumosImpresoras;
 
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -45,7 +45,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class PantallaSalidaInsumos extends JDialog implements ActionListener {
+public class SalidaInsumosImp extends JDialog implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private JLabel lblTitulo;
@@ -98,7 +98,7 @@ public class PantallaSalidaInsumos extends JDialog implements ActionListener {
 	private String insumo4;
 	private String insumo5;
 
-	public PantallaSalidaInsumos() {
+	public SalidaInsumosImp() {
 		setSize(new Dimension(500, 490));
 		setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
 		setMinimumSize(new Dimension(500, 490));
@@ -113,7 +113,7 @@ public class PantallaSalidaInsumos extends JDialog implements ActionListener {
 		lblTitulo.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblTitulo.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		lblTitulo.setAlignmentX(Component.CENTER_ALIGNMENT);
-		lblTitulo.setBounds(0, 11, 494, 25);
+		lblTitulo.setBounds(0, 11, 482, 25);
 		getContentPane().add(lblTitulo);
 
 		lblServicio = new JLabel("Servicio:");
@@ -729,7 +729,7 @@ public class PantallaSalidaInsumos extends JDialog implements ActionListener {
 		});
 
 		btnAceptar = new JButton("");
-		btnAceptar.setIcon(new ImageIcon(PantallaSalidaInsumos.class.getResource("/iconos/aceptar-48px.png")));
+		btnAceptar.setIcon(new ImageIcon(SalidaInsumosImp.class.getResource("/com/controlStock/controlStock/icons/aceptar-48px.png")));
 		btnAceptar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnAceptar.setFocusable(false);
 		btnAceptar.setFocusPainted(false);
@@ -742,7 +742,7 @@ public class PantallaSalidaInsumos extends JDialog implements ActionListener {
 		btnAceptar.addActionListener(this);
 
 		btnCancelar = new JButton("");
-		btnCancelar.setIcon(new ImageIcon(PantallaSalidaInsumos.class.getResource("/iconos/cerrar-ventana-48px.png")));
+		btnCancelar.setIcon(new ImageIcon(SalidaInsumosImp.class.getResource("/com/controlStock/controlStock/icons/cerrar-ventana-48px.png")));
 		btnCancelar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnCancelar.setSize(new Dimension(48, 48));
 		btnCancelar.setPreferredSize(new Dimension(48, 48));
@@ -793,11 +793,11 @@ public class PantallaSalidaInsumos extends JDialog implements ActionListener {
 				JOptionPane.showMessageDialog(null, "Debe seleccionar un Servicio", "Advertencia",
 						JOptionPane.ERROR_MESSAGE);
 			}
-		}
+		}*/
 		if (e.getSource() == btnCancelar) {
 			limpiar();
 			dispose();
-		}*/
+		}
 	}
 
 	/*private void cargaReporte() {

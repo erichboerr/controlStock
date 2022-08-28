@@ -43,7 +43,7 @@ public class NuevoServicio extends JDialog implements ActionListener {
 		lblNuevoCliente.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		lblNuevoCliente.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNuevoCliente.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNuevoCliente.setBounds(0, 11, 534, 25);
+		lblNuevoCliente.setBounds(0, 11, 524, 25);
 		getContentPane().add(lblNuevoCliente);
 
 		lblServicio = new JLabel("Servicio: ");
@@ -92,7 +92,7 @@ public class NuevoServicio extends JDialog implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btnAceptar) {
-			/*if (!txtServicio.getText().equals("")) {// verifico que no este vacio el campo del nombre
+			if (!txtServicio.getText().equals("")) {// verifico que no este vacio el campo del nombre
 				if (!miCoordinador.existeCliente(txtServicio)) {// verifico que no exista ya cargado en BD
 					if (miCoordinador.nuevoCliente(txtServicio)) {// cargo en la BD el nuevo Servicio
 						JOptionPane.showMessageDialog(null, "Servicio agregado con exito");
@@ -110,8 +110,7 @@ public class NuevoServicio extends JDialog implements ActionListener {
 			} else {
 				JOptionPane.showMessageDialog(null, "Debe agregar un Nombre al servicio", "Advertencia",
 						JOptionPane.ERROR_MESSAGE);
-			}*/
-
+			}
 		}
 
 		if (e.getSource() == btnCancelar) {
