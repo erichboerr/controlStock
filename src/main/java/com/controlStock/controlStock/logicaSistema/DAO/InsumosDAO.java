@@ -40,6 +40,8 @@ public class InsumosDAO {
 		this.miCoordinador = miCoordinador;
 	}
 
+	
+	
 	// Marca
 	public int idMarca(JComboBox<String> cmbMarca) {
 		id = 0;
@@ -1292,11 +1294,10 @@ public class InsumosDAO {
 	public void stock() {
 		try {
 			conn = ConnectionDB.getConnection();
-			JasperReport reporte = (JasperReport) JRLoader
-					.loadObject(getClass().getResource("/jrReportes/listadoStock.jasper"));
+			JasperReport reporte = (JasperReport) JRLoader.loadObject(getClass().getResource("/com/controlStock/controlStock/jrReportes/listadoStock.jasper"));
 			JasperPrint jasperPrint = JasperFillManager.fillReport(reporte, null, conn);
 			JasperExportManager.exportReportToPdfFile(jasperPrint,
-					"C:\\reportes\\ReporteStock-al-(" + getFecha() + ")-" + numeroAleatorio() + ".pdf");
+					"C:\\controlStock\\reportes\\ReporteStock-al-(" + getFecha() + ")-" + numeroAleatorio() + ".pdf");
 			JasperViewer viewer = new JasperViewer(jasperPrint, false);
 			viewer.setVisible(true);
 

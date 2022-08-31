@@ -18,6 +18,7 @@ import com.controlStock.controlStock.igu.insumosVarios.IngresoInsumosVarios;
 import com.controlStock.controlStock.igu.insumosVarios.NuevosInsumosVarios;
 import com.controlStock.controlStock.igu.insumosVarios.SalidaInsumosVarios;
 import com.controlStock.controlStock.igu.servicios.*;
+import com.controlStock.controlStock.loggers.Logs;
 import com.controlStock.controlStock.logicaSistema.DAO.ClientesDAO;
 import com.controlStock.controlStock.logicaSistema.DAO.InsumosDAO;
 import com.controlStock.controlStock.logicaSistema.DAO.ProveedoresDAO;
@@ -41,6 +42,10 @@ public class Aplicacion {
 		Inicial miPantallaInicial = new Inicial();
 		miPantallaInicial.setCoodinador(miCoordinador);
 		miCoordinador.setInicial(miPantallaInicial);
+		
+		Logs miLogs = new Logs();
+		miLogs.setCoordinador(miCoordinador);
+		miCoordinador.setmiLogs(miLogs);
 
 		/********************************************************************/
 		// Servicios

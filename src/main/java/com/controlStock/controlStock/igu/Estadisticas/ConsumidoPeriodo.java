@@ -167,7 +167,7 @@ public class ConsumidoPeriodo extends JDialog implements ActionListener {
 						parametros.put("fechaDesde", fDesde);
 						parametros.put("fechaHasta", fHasta);
 						JasperReport reporte = (JasperReport) JRLoader
-								.loadObject(getClass().getResource("/jrReportes/ConsumoSeleccion.jasper"));
+								.loadObject(getClass().getResource("/com/controlStock/controlStock/jrReportes/ConsumoSeleccion.jasper"));
 						JasperPrint jasperPrint = JasperFillManager.fillReport(reporte, parametros,
 								ConnectionDB.getConnection());
 						JasperExportManager.exportReportToPdfFile(jasperPrint, "C:\\ControlStock\\reportes\\ConsumoEnPeriodo-("

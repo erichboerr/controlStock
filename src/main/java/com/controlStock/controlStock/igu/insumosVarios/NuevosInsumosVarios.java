@@ -108,7 +108,7 @@ public class NuevosInsumosVarios extends JDialog implements ActionListener {
 			limpiar();
 			dispose();
 		}
-		/*if (e.getSource() == btnAceptar) {
+		if (e.getSource() == btnAceptar) {
 				if (!txtInsumos.getText().equals("")) {// verifico que no este vacio el campo del nombre
 					if (!miCoordinador.existeInsumo(txtInsumos)) {// verifico que no exista ya cargado en BD
 						if (miCoordinador.nuevoInsumosVarios(txtInsumos)) {// cargo en la BD el nueva Marca
@@ -131,7 +131,7 @@ public class NuevosInsumosVarios extends JDialog implements ActionListener {
 				}
 
 			
-		}*/
+		}
 	}
 
 	private void limpiar() {

@@ -14,9 +14,9 @@ import javax.swing.border.BevelBorder;
 
 import com.controlStock.controlStock.principal.Coordinador;
 
-//import logicaSistema.CargaComboBox;
-//import logicaSistema.DTO.InsumosDTO;
-//import principal.Coordinador;
+import com.controlStock.controlStock.logicaSistema.CargaComboBox;
+import com.controlStock.controlStock.logicaSistema.DTO.InsumosDTO;
+import com.controlStock.controlStock.principal.Coordinador;
 
 import java.awt.Cursor;
 import javax.swing.JTextField;
@@ -65,8 +65,8 @@ public class IngresoInsumosVarios extends JDialog implements ActionListener {
 		this.miCoordinador = miCoordinador;
 	}
 
-	//CargaComboBox cmb = new CargaComboBox();
-	//private InsumosDTO miInsumo;
+	CargaComboBox cmb = new CargaComboBox();
+	private InsumosDTO miInsumo;
 	private JLabel lblInsumos;
 	private String insumo;
 	private String insumo2;
@@ -111,7 +111,7 @@ public class IngresoInsumosVarios extends JDialog implements ActionListener {
 		cmbProveedor.setBounds(75, 47, 269, 23);
 		getContentPane().add(cmbProveedor);
 		cmbProveedor.addActionListener(this);
-		//cmb.cargarCmbProveedor(cmbProveedor);
+		cmb.cargarCmbProveedor(cmbProveedor);
 		cmbProveedor.insertItemAt("Seleccione un Proveedor", 0);
 		cmbProveedor.setSelectedIndex(0);
 
@@ -131,7 +131,7 @@ public class IngresoInsumosVarios extends JDialog implements ActionListener {
 		cmbTipo.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				//cmb.cargarInsumosVarios(cmbTipo);
+				cmb.cargarInsumosVarios(cmbTipo);
 				cmbTipo.insertItemAt("Seleccione un Insumo", 0);
 				cmbTipo.setSelectedIndex(0);
 			}
@@ -169,7 +169,7 @@ public class IngresoInsumosVarios extends JDialog implements ActionListener {
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				if (cmbTipo.getSelectedIndex() > 0) {
-					//cmb.cargarInsumosVarios(cmbTipo2);
+					cmb.cargarInsumosVarios(cmbTipo2);
 					insumo = cmbTipo.getSelectedItem().toString();
 					cmbTipo2.removeItem(insumo);
 					cmbTipo2.insertItemAt("Seleccione un Insumo", 0);
@@ -215,7 +215,7 @@ public class IngresoInsumosVarios extends JDialog implements ActionListener {
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				if (cmbTipo2.getSelectedIndex() > 0) {
-					//cmb.cargarInsumosVarios(cmbTipo3);
+					cmb.cargarInsumosVarios(cmbTipo3);
 					insumo2 = cmbTipo2.getSelectedItem().toString();
 					cmbTipo3.removeItem(insumo);
 					cmbTipo3.removeItem(insumo2);
@@ -261,7 +261,7 @@ public class IngresoInsumosVarios extends JDialog implements ActionListener {
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				if (cmbTipo3.getSelectedIndex() > 0) {
-					//cmb.cargarInsumosVarios(cmbTipo4);
+					cmb.cargarInsumosVarios(cmbTipo4);
 					insumo3 = cmbTipo3.getSelectedItem().toString();
 					cmbTipo4.removeItem(insumo);
 					cmbTipo4.removeItem(insumo2);
@@ -308,7 +308,7 @@ public class IngresoInsumosVarios extends JDialog implements ActionListener {
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				if (cmbTipo4.getSelectedIndex() > 0) {
-					//cmb.cargarInsumosVarios(cmbTipo5);
+					cmb.cargarInsumosVarios(cmbTipo5);
 					insumo4 = cmbTipo4.getSelectedItem().toString();
 					cmbTipo5.removeItem(insumo);
 					cmbTipo5.removeItem(insumo2);
@@ -356,7 +356,7 @@ public class IngresoInsumosVarios extends JDialog implements ActionListener {
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				if (cmbTipo5.getSelectedIndex() > 0) {
-					//cmb.cargarInsumosVarios(cmbTipo6);
+					cmb.cargarInsumosVarios(cmbTipo6);
 					insumo5 = cmbTipo5.getSelectedItem().toString();
 					cmbTipo6.removeItem(insumo);
 					cmbTipo6.removeItem(insumo2);
@@ -405,7 +405,7 @@ public class IngresoInsumosVarios extends JDialog implements ActionListener {
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				if (cmbTipo6.getSelectedIndex() > 0) {
-					//cmb.cargarInsumosVarios(cmbTipo7);
+					cmb.cargarInsumosVarios(cmbTipo7);
 					insumo6 = cmbTipo6.getSelectedItem().toString();
 					cmbTipo7.removeItem(insumo);
 					cmbTipo7.removeItem(insumo2);
@@ -455,7 +455,7 @@ public class IngresoInsumosVarios extends JDialog implements ActionListener {
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				if (cmbTipo7.getSelectedIndex() > 0) {
-					//cmb.cargarInsumosVarios(cmbTipo8);
+					cmb.cargarInsumosVarios(cmbTipo8);
 					insumo7 = cmbTipo7.getSelectedItem().toString();
 					cmbTipo8.removeItem(insumo);
 					cmbTipo8.removeItem(insumo2);
@@ -506,7 +506,7 @@ public class IngresoInsumosVarios extends JDialog implements ActionListener {
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				if (cmbTipo8.getSelectedIndex() > 0) {
-					//cmb.cargarInsumosVarios(cmbTipo9);
+					cmb.cargarInsumosVarios(cmbTipo9);
 					insumo8 = cmbTipo8.getSelectedItem().toString();
 					cmbTipo9.removeItem(insumo);
 					cmbTipo9.removeItem(insumo2);
@@ -608,7 +608,7 @@ public class IngresoInsumosVarios extends JDialog implements ActionListener {
 			limpiar();
 			dispose();
 		}
-		/*if (e.getSource() == btnAceptar) {
+		if (e.getSource() == btnAceptar) {
 			if (cmbProveedor.getSelectedIndex() > 0) {
 				if (cmbTipo.getSelectedIndex() > 0) {
 					if (!txtCantidad.getText().equals("")) {
@@ -634,8 +634,8 @@ public class IngresoInsumosVarios extends JDialog implements ActionListener {
 		}
 
 		if (e.getSource() == btnNuevoInsumo) {
-			miCoordinador.miPantallaInsumosVarios();
-		}*/
+			miCoordinador.iniciarPantallaNuevoInsumosVarios();
+		}
 	}
 
 	private void limpiar() {
@@ -661,7 +661,7 @@ public class IngresoInsumosVarios extends JDialog implements ActionListener {
 		cmbTipo9.setSelectedIndex(0);
 	}
 
-	/*public InsumosDTO miInsumoDTO() {
+	public InsumosDTO miInsumoDTO() {
 
 		String fecha = getFechaActual();
 
@@ -672,7 +672,7 @@ public class IngresoInsumosVarios extends JDialog implements ActionListener {
 		listaInsumos();
 		miInsumo.setListaInsumos(listaInsumos);
 		return miInsumo;
-	}*/
+	}
 
 	public static String getFechaActual() {
 		Date fechaActual = new Date();
@@ -680,7 +680,7 @@ public class IngresoInsumosVarios extends JDialog implements ActionListener {
 		return formateador.format(fechaActual);
 	}
 
-	/*public List<List<Integer>> listaInsumos() {
+	public List<List<Integer>> listaInsumos() {
 
 		listaInsumos = new ArrayList<List<Integer>>();
 		listaInsumos.add(new ArrayList<Integer>());// indice 0 guarda listas de insumos
@@ -747,5 +747,5 @@ public class IngresoInsumosVarios extends JDialog implements ActionListener {
 			}
 		}
 		return listaInsumos;
-	}*/
+	}
 }

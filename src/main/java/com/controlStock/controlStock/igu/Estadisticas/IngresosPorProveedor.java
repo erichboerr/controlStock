@@ -177,7 +177,7 @@ public class IngresosPorProveedor extends JDialog implements ActionListener {
 						parametros.put("fechaHasta", fHasta);
 						parametros.put("proveedorId", proveedorId);
 						JasperReport reporte = (JasperReport) JRLoader
-								.loadObject(getClass().getResource("/jrReportes/movIngresosProveedor.jasper"));
+								.loadObject(getClass().getResource("/com/controlStock/controlStock/jrReportes/movIngresosProveedor.jasper"));
 
 						JasperPrint jasperPrint = JasperFillManager.fillReport(reporte, parametros,
 								ConnectionDB.getConnection());

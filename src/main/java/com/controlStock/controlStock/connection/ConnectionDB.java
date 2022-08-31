@@ -20,7 +20,7 @@ public class ConnectionDB {
 
 		try {
 			if (conn == null) {
-				rb = ResourceBundle.getBundle("connection.jdbc");
+				rb = ResourceBundle.getBundle("com.controlStock.controlStock.connection.jdbc_Host");
 				driver = rb.getString("driver");
 				user = rb.getString("user");
 				pass = rb.getString("pass");

@@ -186,7 +186,7 @@ public class SalidaPorServicio extends JDialog implements ActionListener {
 						parametros.put("fechaHasta", fHasta);
 						parametros.put("servicioId", servicioId);
 						JasperReport reporte = (JasperReport) JRLoader
-								.loadObject(getClass().getResource("/jrReportes/movInsServicio.jasper"));
+								.loadObject(getClass().getResource("/com/controlStock/controlStock/jrReportes/movInsServicio.jasper"));
 
 						JasperPrint jasperPrint = JasperFillManager.fillReport(reporte, parametros,
 								ConnectionDB.getConnection());

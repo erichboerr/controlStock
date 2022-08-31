@@ -96,7 +96,7 @@ public class IngresosPorInsumo extends JDialog implements ActionListener {
 		cmbInsumo.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		cmbInsumo.setBounds(10, 56, 410, 28);
 		contentPanel.add(cmbInsumo);
-		//cmb.cargarInsum(cmbInsumo);
+		cmb.cargarInsum(cmbInsumo);
 		cmbInsumo.insertItemAt("Seleccione un Insumo", 0);
 		cmbInsumo.setSelectedIndex(0);
 
@@ -179,7 +179,7 @@ public class IngresosPorInsumo extends JDialog implements ActionListener {
 						parametros.put("fechaHasta", fHasta);
 						parametros.put("insumoId", insumoId);
 						JasperReport reporte = (JasperReport) JRLoader
-								.loadObject(getClass().getResource("/jrReportes/movIngresosInsumos.jasper"));
+								.loadObject(getClass().getResource("/com/controlStock/controlStock/jrReportes/movIngresosInsumos.jasper"));
 						JasperPrint jasperPrint = JasperFillManager.fillReport(reporte, parametros,
 								ConnectionDB.getConnection());
 						JasperExportManager.exportReportToPdfFile(jasperPrint,

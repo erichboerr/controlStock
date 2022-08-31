@@ -9,8 +9,8 @@ import javax.swing.border.BevelBorder;
 
 import com.controlStock.controlStock.connection.ConnectionDB;
 import com.controlStock.controlStock.loggers.Logs;
-//import logicaSistema.CargaComboBox;
-//import logicaSistema.DTO.InsumosDTO;
+import com.controlStock.controlStock.logicaSistema.CargaComboBox;
+import com.controlStock.controlStock.logicaSistema.DTO.InsumosDTO;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -19,7 +19,7 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
 import com.controlStock.controlStock.principal.Coordinador;
-//import reports.SalidaInsumosDatasource;
+import com.controlStock.controlStock.reports.SalidaInsumosDatasource;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -66,7 +66,7 @@ public class SalidaInsumosVarios extends JDialog implements ActionListener {
 	private JLabel lblServicio;
 	private Coordinador miCoordinador;
 	private JLabel lblInsumo4;
-	//public InsumosDTO miInsumo;
+	public InsumosDTO miInsumo;
 	private Statement st;
 	private ResultSet rs;
 	private Connection conn;
@@ -76,7 +76,7 @@ public class SalidaInsumosVarios extends JDialog implements ActionListener {
 		this.miCoordinador = miCoordinador;
 	}
 
-	//CargaComboBox cmb = new CargaComboBox();
+	CargaComboBox cmb = new CargaComboBox();
 	int i = 0;
 	int j = 0;
 	int k = 0;
@@ -130,7 +130,7 @@ public class SalidaInsumosVarios extends JDialog implements ActionListener {
 			public void mouseEntered(MouseEvent e) {
 
 				if (j == 0) {
-					//cmb.cargarCmbServicio(cmbServicio);
+					cmb.cargarCmbServicio(cmbServicio);
 					cmbServicio.insertItemAt("Seleccione un Servicio", 0);
 					cmbServicio.setSelectedIndex(0);
 					j = 1;
@@ -155,7 +155,7 @@ public class SalidaInsumosVarios extends JDialog implements ActionListener {
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-					//cmb.cargarInsumosVarios(cmbInsumo);
+					cmb.cargarInsumosVarios(cmbInsumo);
 						cmbInsumo.insertItemAt("Seleccione un Insumo", 0);
 						cmbInsumo.setSelectedIndex(0);
 						txtCantidad.setEditable(true);
@@ -200,7 +200,7 @@ public class SalidaInsumosVarios extends JDialog implements ActionListener {
 			public void mouseClicked(MouseEvent e) {
 
 				if (cmbInsumo.getSelectedIndex() > 0) {
-					//cmb.cargarInsumosVarios(cmbInsumo2);
+					cmb.cargarInsumosVarios(cmbInsumo2);
 					insumo = cmbInsumo.getSelectedItem().toString();
 					cmbInsumo2.removeItem(insumo);
 					cmbInsumo2.insertItemAt("Seleccione un Insumo", 0);
@@ -209,7 +209,7 @@ public class SalidaInsumosVarios extends JDialog implements ActionListener {
 					txtCantidad2.setEditable(true);
 
 					if (i >= 3) {// precargo el 3
-						//cmb.cargarInsumosVarios(cmbInsumo3);
+						cmb.cargarInsumosVarios(cmbInsumo3);
 						cmbInsumo3.insertItemAt("Seleccione un Insumo", 0);
 						cmbInsumo3.setSelectedIndex(0);
 						cmbInsumo4.removeAllItems();
@@ -302,7 +302,7 @@ public class SalidaInsumosVarios extends JDialog implements ActionListener {
 			public void mouseClicked(MouseEvent e) {
 
 				if (cmbInsumo2.getSelectedIndex() > 0) {
-					//cmb.cargarInsumosVarios(cmbInsumo3);
+					cmb.cargarInsumosVarios(cmbInsumo3);
 					insumo2 = cmbInsumo2.getSelectedItem().toString();
 					cmbInsumo3.removeItem(insumo);
 					cmbInsumo3.removeItem(insumo2);
@@ -311,7 +311,7 @@ public class SalidaInsumosVarios extends JDialog implements ActionListener {
 					txtCantidad3.requestFocus();
 					txtCantidad3.setEditable(true);
 					if (i >= 5) {
-						//cmb.cargarInsumosVarios(cmbInsumo4);
+						cmb.cargarInsumosVarios(cmbInsumo4);
 						cmbInsumo4.insertItemAt("Seleccione un Insumo", 0);
 						cmbInsumo4.setSelectedIndex(0);
 						cmbInsumo5.removeAllItems();
@@ -388,7 +388,7 @@ public class SalidaInsumosVarios extends JDialog implements ActionListener {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if (cmbInsumo3.getSelectedIndex() > 0) {
-					//cmb.cargarInsumosVarios(cmbInsumo4);
+					cmb.cargarInsumosVarios(cmbInsumo4);
 					insumo3 = cmbInsumo3.getSelectedItem().toString();
 					cmbInsumo4.removeItem(insumo);
 					cmbInsumo4.removeItem(insumo2);
@@ -398,7 +398,7 @@ public class SalidaInsumosVarios extends JDialog implements ActionListener {
 					txtCantidad4.requestFocus();
 					txtCantidad4.setEditable(true);
 					if (i >= 6) {
-						//cmb.cargarInsumosVarios(cmbInsumo5);
+						cmb.cargarInsumosVarios(cmbInsumo5);
 						cmbInsumo5.insertItemAt("Seleccione un Insumo", 0);
 						cmbInsumo5.setSelectedIndex(0);
 						cmbInsumo6.removeAllItems();
@@ -463,7 +463,7 @@ public class SalidaInsumosVarios extends JDialog implements ActionListener {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if (cmbInsumo4.getSelectedIndex() > 0) {
-					//cmb.cargarInsumosVarios(cmbInsumo5);
+					cmb.cargarInsumosVarios(cmbInsumo5);
 					insumo4 = cmbInsumo4.getSelectedItem().toString();
 					cmbInsumo5.removeItem(insumo);
 					cmbInsumo5.removeItem(insumo2);
@@ -474,7 +474,7 @@ public class SalidaInsumosVarios extends JDialog implements ActionListener {
 					txtCantidad5.requestFocus();
 					txtCantidad5.setEditable(true);
 					if (i >= 7) {
-						//cmb.cargarInsumosVarios(cmbInsumo6);
+						cmb.cargarInsumosVarios(cmbInsumo6);
 						cmbInsumo6.insertItemAt("Seleccione un Insumo", 0);
 						cmbInsumo6.setSelectedIndex(0);
 						txtCantidad6.setEditable(false);
@@ -528,7 +528,7 @@ public class SalidaInsumosVarios extends JDialog implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if (cmbInsumo5.getSelectedIndex() > 1) {
-					//cmb.cargarInsumosVarios(cmbInsumo6);
+					cmb.cargarInsumosVarios(cmbInsumo6);
 					insumo5 = cmbInsumo5.getSelectedItem().toString();
 					cmbInsumo6.removeItem(insumo);
 					cmbInsumo6.removeItem(insumo2);
@@ -599,7 +599,7 @@ public class SalidaInsumosVarios extends JDialog implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-	/*	if (e.getSource() == btnAceptar) {
+		if (e.getSource() == btnAceptar) {
 			if (cmbServicio.getSelectedIndex() > 0) {
 				
 						if (cmbInsumo.getSelectedIndex() > 0) {
@@ -621,14 +621,14 @@ public class SalidaInsumosVarios extends JDialog implements ActionListener {
 				JOptionPane.showMessageDialog(null, "Debe seleccionar un Servicio", "Advertencia",
 						JOptionPane.ERROR_MESSAGE);
 			}
-		}*/
+		}
 		if (e.getSource() == btnCancelar) {
 			limpiar();
 			dispose();
 		}
 	}
 
-	/*private void cargaReporte() {
+	private void cargaReporte() {
 
 		SalidaInsumosDatasource datasource = new SalidaInsumosDatasource();
 
@@ -673,7 +673,7 @@ public class SalidaInsumosVarios extends JDialog implements ActionListener {
 					.loadObject(getClass().getResource("/jrReportes/salidaInsumosVarios.jasper"));
 			JasperPrint jasperPrint = JasperFillManager.fillReport(reporte, null, datasource);
 			JasperExportManager.exportReportToPdfFile(jasperPrint,
-					"C:\\reportes\\SalidaInsumos-(" + getFecha() + ")-" + numeroAleatorio() + ".pdf");
+					"C:\\ControlStock\\reportes\\SalidaInsumos-(" + getFecha() + ")-" + numeroAleatorio() + ".pdf");
 			JasperViewer viewer = new JasperViewer(jasperPrint, false);		
 			viewer.setVisible(true);
 
@@ -700,9 +700,9 @@ public class SalidaInsumosVarios extends JDialog implements ActionListener {
 		miInsumo.setListaInsumos(listaInsumos);
 
 		return miInsumo;
-	}*/
+	}
 
-	/*private List<List<Integer>> listaInsumos() {
+	private List<List<Integer>> listaInsumos() {
 		try {
 			int idInsumo = cmb.idInsumo(cmbInsumo);
 			if (stockSuperiorCero(idInsumo)) {
@@ -813,7 +813,7 @@ public class SalidaInsumosVarios extends JDialog implements ActionListener {
 			miLogs.cargarArchivo(error);
 		}
 		return listaInsumos;
-	}*/
+	}
 
 	private boolean stockSuperiorCero(int idInsumo) {
 		boolean existe = false;
@@ -838,7 +838,7 @@ public class SalidaInsumosVarios extends JDialog implements ActionListener {
 			}
 		} catch (SQLException e) {
 			String error = "(PantallaSalidaInsumosVarios = 817)Error al Buscar stock superior a cero: " + e.getMessage();
-			//miCoordinador.cargaErrores(error);
+			miCoordinador.cargaErrores(error);
 		}
 
 		return existe;

@@ -1,11 +1,13 @@
 package com.controlStock.controlStock.igu;
 
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import com.controlStock.controlStock.principal.Coordinador;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.JPanel;
 
 public class Inicial extends javax.swing.JFrame {
 
@@ -42,11 +44,12 @@ public class Inicial extends javax.swing.JFrame {
 	private javax.swing.JMenu mntmmovimientoXInsumo;
 	private javax.swing.JMenu mntmmovimientoXProveedor;
 	private javax.swing.JMenuItem mntmnuevoInsumoImpresora;
-
 	private static final long serialVersionUID = 1L;
 	private Coordinador miCoordinador;
 
 	public Inicial() {
+		setTitle("ControlStock");
+		setResizable(false);				
 		initComponents();
 	}
 
@@ -85,14 +88,17 @@ public class Inicial extends javax.swing.JFrame {
 		mntmSalidasPorInsumo = new javax.swing.JMenuItem();
 		mntmSalidasPorServicio = new javax.swing.JMenuItem();
 		mntmConsumidoPeriodo = new javax.swing.JMenuItem();
+		
+		
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-		setLocationRelativeTo(null);
+		
+		getContentPane().setLayout(null);
 		getContentPane();
 
 		lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		lblLogo.setIcon(new javax.swing.ImageIcon(
-				getClass().getResource("/com/controlStock/controlstock/imagenes/Logo Soporte.jpg"))); // NOI18N
+				getClass().getResource("/com/controlStock/controlstock/imagenes/Logo Soporte.jpg")));
 		lblLogo.setMaximumSize(new java.awt.Dimension(450, 450));
 		lblLogo.setMinimumSize(new java.awt.Dimension(450, 450));
 		lblLogo.setPreferredSize(new java.awt.Dimension(450, 450));

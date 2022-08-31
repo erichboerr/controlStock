@@ -209,7 +209,7 @@ public class SalidaPorInsumos extends JDialog implements ActionListener {
 						parametros.put("insumoId", insumoId);
 						parametros.put("total", total);
 						JasperReport reporte = (JasperReport) JRLoader
-								.loadObject(getClass().getResource("/jrReportes/movimientoInsumos.jasper"));
+								.loadObject(getClass().getResource("/com/controlStock/controlStock/jrReportes/movimientoInsumos.jasper"));
 						JasperPrint jasperPrint = JasperFillManager.fillReport(reporte, parametros,
 								ConnectionDB.getConnection());
 						JasperExportManager.exportReportToPdfFile(jasperPrint,
