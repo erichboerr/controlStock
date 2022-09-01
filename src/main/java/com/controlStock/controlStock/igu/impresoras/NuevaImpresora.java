@@ -3,24 +3,18 @@ package com.controlStock.controlStock.igu.impresoras;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
-
 import com.controlStock.controlStock.connection.ConnectionDB;
-
 import javax.swing.JComboBox;
-
-//import logicaSistema.CargaComboBox;
-//import logicaSistema.DTO.InsumosDTO;
+import com.controlStock.controlStock.logicaSistema.CargaComboBox;
+import com.controlStock.controlStock.logicaSistema.DTO.InsumosDTO;
 import com.controlStock.controlStock.principal.Coordinador;
-
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.Dimension;
@@ -54,7 +48,7 @@ public class NuevaImpresora extends JDialog implements ActionListener {
 	private JLabel lblNroSerie;
 	private JButton btnAceptar;
 	private JButton btnCancelar;
-	//public InsumosDTO miInsumo;
+	public InsumosDTO miInsumo;
 	private JComboBox<String> cmbInsumo6;
 	private JComboBox<String> cmbInsumo5;
 	private JComboBox<String> cmbInsumo4;
@@ -67,13 +61,11 @@ public class NuevaImpresora extends JDialog implements ActionListener {
 	private JButton btnAddIsumo2;
 	private JButton btnAddIsumo;
 	private JButton btnAddIsumo4;
-
 	private String insumo;
 	private String insumo2;
 	private String insumo3;
 	private String insumo4;
 	private String insumo5;
-
 	private int i = 0;
 	private int j = 0;
 
@@ -81,7 +73,7 @@ public class NuevaImpresora extends JDialog implements ActionListener {
 		this.miCoordinador = miCoordinador;
 	}
 
-	//CargaComboBox cmb = new CargaComboBox();
+	CargaComboBox cmb = new CargaComboBox();
 
 	public NuevaImpresora() {
 		setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
@@ -116,7 +108,7 @@ public class NuevaImpresora extends JDialog implements ActionListener {
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				if (cmbProveedor.getSelectedIndex() == 0) {
-					//cmb.cargarCmbProveedor(cmbProveedor);
+					cmb.cargarCmbProveedor(cmbProveedor);
 					cmbProveedor.insertItemAt("Seleccione un Proveedor", 0);
 					cmbProveedor.setSelectedIndex(0);
 				}
@@ -140,7 +132,7 @@ public class NuevaImpresora extends JDialog implements ActionListener {
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				if (j == 0) {
-					//cmb.cargarCmbMarca(cmbMarca);
+					cmb.cargarCmbMarca(cmbMarca);
 					cmbMarca.insertItemAt("Seleccione una Marca", 0);
 					cmbMarca.setSelectedIndex(0);
 					j = 1;
@@ -164,7 +156,7 @@ public class NuevaImpresora extends JDialog implements ActionListener {
 		btnAgregarMarca.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				//miCoordinador.miPantallaMarca();
+				miCoordinador.iniciarPantallaMarcaImpresora();
 				j = 0;
 			}
 		});
@@ -187,7 +179,7 @@ public class NuevaImpresora extends JDialog implements ActionListener {
 			public void mouseEntered(MouseEvent e) {
 
 				if (cmbMarca.getSelectedIndex() > 0) {
-					//cmb.cargarCmbModelo(cmbModelo, cmbMarca);
+					cmb.cargarCmbModelo(cmbModelo, cmbMarca);
 					cmbModelo.insertItemAt("Seleccione un Modelo", 0);
 					cmbModelo.setSelectedIndex(0);
 					cmbInsumo.removeAllItems();
@@ -249,7 +241,7 @@ public class NuevaImpresora extends JDialog implements ActionListener {
 		btnagregarModelo.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				//miCoordinador.miPantallaModelo();
+				miCoordinador.iniciarPantallaModeloImpresora();
 			}
 		});
 
@@ -283,13 +275,13 @@ public class NuevaImpresora extends JDialog implements ActionListener {
 			public void mouseEntered(MouseEvent e) {
 				if (cmbInsumo.getSelectedIndex() == 0) {
 					if (cmbModelo.getSelectedIndex() > 0) {
-						//cmb.cargarInsumo(cmbInsumo, cmbModelo);
+						cmb.cargarInsumo(cmbInsumo, cmbModelo);
 						cmbInsumo.insertItemAt("Seleccione un Insumo", 0);
 						cmbInsumo.setSelectedIndex(0);
 						i = cmbInsumo.getItemCount();
 
 						if (i >= 3) {// precargo el 3� combobox
-							//cmb.cargarInsumo(cmbInsumo2, cmbModelo);
+							cmb.cargarInsumo(cmbInsumo2, cmbModelo);
 							cmbInsumo2.insertItemAt("Seleccione un Insumo", 0);
 							cmbInsumo2.setSelectedIndex(0);
 							cmbInsumo3.removeAllItems();
@@ -361,7 +353,7 @@ public class NuevaImpresora extends JDialog implements ActionListener {
 		btnAddIsumo.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				//miCoordinador.miPantallaInsumos();
+				miCoordinador.iniciarPantallaNuevoInsumos();
 			}
 		});
 

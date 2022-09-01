@@ -15,8 +15,6 @@ import javax.swing.JButton;
 import java.awt.Dimension;
 import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.awt.Cursor;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
@@ -32,14 +30,13 @@ public class ModificarServicio extends JDialog implements ActionListener {
 		private JLabel lblServicioNew;
 		private Coordinador miCoordinador;
 		private JComboBox<String> cmbServicio;
-
+		private JLabel lblServicioOriginal;
+		
 		public void setCoodinador(Coordinador miCoordinador) {
 			this.miCoordinador = miCoordinador;
 		}
 
-		CargaComboBox cmb = new CargaComboBox();
-		
-		private JLabel lblServicioOriginal;
+		CargaComboBox cmb = new CargaComboBox();		
 
 		public ModificarServicio() {
 			setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);

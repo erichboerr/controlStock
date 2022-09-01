@@ -211,7 +211,7 @@ public class Inicial extends javax.swing.JFrame {
 		mnInsumosImpresoras.add(mntmnuevoInsumoImpresora);
 		mntmnuevoInsumoImpresora.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				miCoordinador.iniciarPantallaNuevoInsumoImpresora();
+				miCoordinador.iniciarPantallaNuevoInsumos();
 			}
 		});
 

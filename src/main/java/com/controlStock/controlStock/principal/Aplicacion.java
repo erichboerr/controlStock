@@ -10,8 +10,9 @@ import com.controlStock.controlStock.igu.impresoras.ActualizarSerieImpresora;
 import com.controlStock.controlStock.igu.impresoras.BajaImpresora;
 import com.controlStock.controlStock.igu.impresoras.EntregarImpresoraNuevaServicio;
 import com.controlStock.controlStock.igu.impresoras.EntregarImpresoraUsadaServicio;
+import com.controlStock.controlStock.igu.impresoras.MarcaImpresora;
+import com.controlStock.controlStock.igu.impresoras.ModeloImpresora;
 import com.controlStock.controlStock.igu.impresoras.NuevaImpresora;
-import com.controlStock.controlStock.igu.impresoras.NuevoInsumosImpresora;
 import com.controlStock.controlStock.igu.impresoras.QuitarImpresoraServicio;
 import com.controlStock.controlStock.igu.insumosImpresoras.*;
 import com.controlStock.controlStock.igu.insumosVarios.IngresoInsumosVarios;
@@ -72,22 +73,7 @@ public class Aplicacion {
 		miCoordinador.setmiPantallaBajaProveedor(miPantallaBajaProveedor);
 
 		/********************************************************************/
-		// Impresoras
-		NuevaImpresora miPantallaNuevaImpresora = new NuevaImpresora();
-		miPantallaNuevaImpresora.setCoordinador(miCoordinador);
-		miCoordinador.setmiPantallaNuevaImpresora(miPantallaNuevaImpresora);
-		
-		EntregarImpresoraNuevaServicio miPantallaEntregarImpresoraNuevaServicio = new EntregarImpresoraNuevaServicio();
-		miPantallaEntregarImpresoraNuevaServicio.setCoordinador(miCoordinador);
-		miCoordinador.setmiPantallaEntregarImpresoraNuevaServicio(miPantallaEntregarImpresoraNuevaServicio);
-		
-		EntregarImpresoraUsadaServicio miPantallaEntregarImpresoraUsadaServicio = new EntregarImpresoraUsadaServicio();
-		miPantallaEntregarImpresoraUsadaServicio.setCoordinador(miCoordinador);
-		miCoordinador.setmiPantallaEntregarImpresoraUsadaServicio(miPantallaEntregarImpresoraUsadaServicio);
-		
-		QuitarImpresoraServicio miPantallaQuitarImpresoraServicio = new QuitarImpresoraServicio();
-		miPantallaQuitarImpresoraServicio.setCoordinador(miCoordinador);
-		miCoordinador.setmiPantallaQuitarImpresoraServicio(miPantallaQuitarImpresoraServicio);
+		// Impresoras	
 		
 		ActualizarSerieImpresora miPantallaActualizarSerieImpresora = new ActualizarSerieImpresora();
 		miPantallaActualizarSerieImpresora.setCoordinador(miCoordinador);
@@ -97,13 +83,38 @@ public class Aplicacion {
 		miPantallaBajaImpresora.setCoordinador(miCoordinador);
 		miCoordinador.setmiPantallaBajaImpresora(miPantallaBajaImpresora);
 		
+		EntregarImpresoraNuevaServicio miPantallaEntregarImpresoraNuevaServicio = new EntregarImpresoraNuevaServicio();
+		miPantallaEntregarImpresoraNuevaServicio.setCoordinador(miCoordinador);
+		miCoordinador.setmiPantallaEntregarImpresoraNuevaServicio(miPantallaEntregarImpresoraNuevaServicio);
+		
+		EntregarImpresoraUsadaServicio miPantallaEntregarImpresoraUsadaServicio = new EntregarImpresoraUsadaServicio();
+		miPantallaEntregarImpresoraUsadaServicio.setCoordinador(miCoordinador);
+		miCoordinador.setmiPantallaEntregarImpresoraUsadaServicio(miPantallaEntregarImpresoraUsadaServicio);
+		
+		MarcaImpresora miPantallaMarcaImpresora = new MarcaImpresora();
+		miPantallaMarcaImpresora.setCoordinador(miCoordinador);
+		miCoordinador.setmiPantallaMarcaInpresora(miPantallaMarcaImpresora);
+		
+		ModeloImpresora miPantallaModeloImpresora = new ModeloImpresora();
+		miPantallaModeloImpresora.setCoordinador(miCoordinador);
+		miCoordinador.setmiPantallaModeloInpresora(miPantallaModeloImpresora);
+				
+		NuevaImpresora miPantallaNuevaImpresora = new NuevaImpresora();
+		miPantallaNuevaImpresora.setCoordinador(miCoordinador);
+		miCoordinador.setmiPantallaNuevaImpresora(miPantallaNuevaImpresora);
+				
+		QuitarImpresoraServicio miPantallaQuitarImpresoraServicio = new QuitarImpresoraServicio();
+		miPantallaQuitarImpresoraServicio.setCoordinador(miCoordinador);
+		miCoordinador.setmiPantallaQuitarImpresoraServicio(miPantallaQuitarImpresoraServicio);
+		
 		
 		/********************************************************************/
 		// Insumos impresoras
-		NuevoInsumosImpresora miPantallaNuevoInsumosImpresora = new NuevoInsumosImpresora();
-		miPantallaNuevoInsumosImpresora.setCoordinador(miCoordinador);
-		miCoordinador.setmiPantallaNuevoInsumoImpresora(miPantallaNuevoInsumosImpresora);
-
+		
+		NuevoInsumos miPantallaNuevoInsumos = new NuevoInsumos();
+		miPantallaNuevoInsumos.setCoordinador(miCoordinador);
+		miCoordinador.setmiPantallaNuevoInsumos(miPantallaNuevoInsumos);
+		
 		IngresoInsumosImp miPantallaIngresoInsumosImp = new IngresoInsumosImp();
 		miPantallaIngresoInsumosImp.setCoordinador(miCoordinador);
 		miCoordinador.setmiPantallaIngresoInsumosImp(miPantallaIngresoInsumosImp);
@@ -114,6 +125,7 @@ public class Aplicacion {
 
 		/********************************************************************/
 		//Insumos Varios
+		
 		NuevosInsumosVarios miPantallaNuevosInsumosVarios = new NuevosInsumosVarios();
 		miPantallaNuevosInsumosVarios.setCoordinador(miCoordinador);
 		miCoordinador.setmiPantallaNuevosInsumosVarios(miPantallaNuevosInsumosVarios);

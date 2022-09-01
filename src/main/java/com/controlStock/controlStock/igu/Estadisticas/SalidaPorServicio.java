@@ -222,7 +222,7 @@ public class SalidaPorServicio extends JDialog implements ActionListener {
 	}
 
 	private void limpiar() {
-		
+		cmbServicio.setSelectedIndex(0);
 	}
 
 	private static String getFecha() {

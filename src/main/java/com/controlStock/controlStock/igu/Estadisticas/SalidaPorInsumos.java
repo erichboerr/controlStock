@@ -233,16 +233,16 @@ public class SalidaPorInsumos extends JDialog implements ActionListener {
 			} else {
 				JOptionPane.showMessageDialog(null, "Debe seleccionar un Insumo para la estadistica", "Advertencia",
 						JOptionPane.ERROR_MESSAGE);
-			}
-
-			if (e.getSource() == btnCancelar) {
-				limpiar();
-				dispose();
-			}
+			}			
+		}
+		if (e.getSource() == btnCancelar) {
+			limpiar();
+			dispose();
 		}
 	}
 
 	private void limpiar() {
+		cmbInsumo.setSelectedIndex(0);
 
 	}
 

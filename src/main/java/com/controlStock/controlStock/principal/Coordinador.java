@@ -1,35 +1,18 @@
 package com.controlStock.controlStock.principal;
 
-import com.controlStock.controlStock.loggers.*;
-import com.controlStock.controlStock.logicaSistema.DAO.ClientesDAO;
-import com.controlStock.controlStock.logicaSistema.DAO.InsumosDAO;
-import com.controlStock.controlStock.logicaSistema.DAO.ProveedoresDAO;
-import com.controlStock.controlStock.logicaSistema.DTO.InsumosDTO;
-import com.controlStock.controlStock.logicaSistema.DTO.ProveedoresDTO;
-import com.controlStock.controlStock.igu.servicios.*;
-
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
-
+import com.controlStock.controlStock.loggers.*;
+import com.controlStock.controlStock.logicaSistema.DAO.*;
+import com.controlStock.controlStock.logicaSistema.DTO.*;
 import com.controlStock.controlStock.igu.Inicial;
-import com.controlStock.controlStock.igu.Estadisticas.ConsumidoPeriodo;
-import com.controlStock.controlStock.igu.Estadisticas.IngresosPorInsumo;
-import com.controlStock.controlStock.igu.Estadisticas.IngresosPorProveedor;
-import com.controlStock.controlStock.igu.Estadisticas.SalidaPorInsumos;
-import com.controlStock.controlStock.igu.Estadisticas.SalidaPorServicio;
-import com.controlStock.controlStock.igu.impresoras.ActualizarSerieImpresora;
-import com.controlStock.controlStock.igu.impresoras.BajaImpresora;
-import com.controlStock.controlStock.igu.impresoras.EntregarImpresoraNuevaServicio;
-import com.controlStock.controlStock.igu.impresoras.EntregarImpresoraUsadaServicio;
-import com.controlStock.controlStock.igu.impresoras.NuevaImpresora;
-import com.controlStock.controlStock.igu.impresoras.NuevoInsumosImpresora;
-import com.controlStock.controlStock.igu.impresoras.QuitarImpresoraServicio;
+import com.controlStock.controlStock.igu.Estadisticas.*;
+import com.controlStock.controlStock.igu.impresoras.*;
 import com.controlStock.controlStock.igu.insumosImpresoras.*;
-import com.controlStock.controlStock.igu.insumosVarios.IngresoInsumosVarios;
-import com.controlStock.controlStock.igu.insumosVarios.NuevosInsumosVarios;
-import com.controlStock.controlStock.igu.insumosVarios.SalidaInsumosVarios;
+import com.controlStock.controlStock.igu.insumosVarios.*;
 import com.controlStock.controlStock.igu.proveedores.*;
+import com.controlStock.controlStock.igu.servicios.*;
 
 public class Coordinador {
 
@@ -39,8 +22,7 @@ public class Coordinador {
 		private NuevoProveedor miPantallaNuevoProveedor;
 		private ModificarProveedor miPantallaModificarProveedor;
 		private BajaProveedor miPantallaBajaProveedor;
-		private Logs miLogs;
-		private NuevoInsumosImpresora miPantallaNuevoInsumoImpresora;     
+		private Logs miLogs; 
 		private IngresoInsumosImp miPantallaIngresoInsumosImp;
 		private SalidaInsumosImp miPantallaSalidaInsumosImp;
 		private NuevosInsumosVarios miPantallaNuevosInsumosVarios;
@@ -60,6 +42,9 @@ public class Coordinador {
 		private ClientesDAO miClientesDAO;
 		private ProveedoresDAO miProveedoresDAO;
 		private InsumosDAO miInsumosDAO;
+		private MarcaImpresora miPantallaMarcaImpresora;
+		private ModeloImpresora miPantallaModeloImpresora;
+		private NuevoInsumos miPantallaNuevoInsumos;
 
 	    /*************************************************************************/
 		//Visibilidad de Pantallas
@@ -170,14 +155,31 @@ public class Coordinador {
 			miPantallaBajaImpresora.setVisible(true);			
 		}
 		
+		public void setmiPantallaMarcaInpresora(MarcaImpresora miPantallaMarcaImpresora) {
+		this.miPantallaMarcaImpresora = miPantallaMarcaImpresora;			
+		}
+		
+		public void iniciarPantallaMarcaImpresora() {
+			miPantallaMarcaImpresora.setVisible(true);			
+		}
+		
+		public void setmiPantallaModeloInpresora(ModeloImpresora miPantallaModeloImpresora) {
+			this.miPantallaModeloImpresora = miPantallaModeloImpresora;			
+			}
+		
+		public void iniciarPantallaModeloImpresora() {
+			miPantallaModeloImpresora.setVisible(true);			
+		}
+		
 	    /*************************************************************************/
 		//Insumos Impresoras
-		public void setmiPantallaNuevoInsumoImpresora(NuevoInsumosImpresora miPantallaNuevoInsumoImpresora) {
-			this.miPantallaNuevoInsumoImpresora = miPantallaNuevoInsumoImpresora;			
+		public void setmiPantallaNuevoInsumos(NuevoInsumos miPantallaNuevoInsumos) {
+			this.miPantallaNuevoInsumos = miPantallaNuevoInsumos;			
 		}
-		public void iniciarPantallaNuevoInsumoImpresora() {
-			miPantallaNuevoInsumoImpresora.setVisible(true);			
-		}
+		
+		public void iniciarPantallaNuevoInsumos() {
+			miPantallaNuevoInsumos.setVisible(true);			
+		}	
 		
 		public void setmiPantallaIngresoInsumosImp(IngresoInsumosImp miPantallaIngresoInsumosImp) {
 			this.miPantallaIngresoInsumosImp = miPantallaIngresoInsumosImp;			
@@ -196,6 +198,7 @@ public class Coordinador {
 		
 	    /*************************************************************************/
 		//Insumos Varios
+		
 		public void setmiPantallaNuevosInsumosVarios(NuevosInsumosVarios miPantallaNuevosInsumosVarios) {
 			this.miPantallaNuevosInsumosVarios = miPantallaNuevosInsumosVarios;			
 		}
@@ -269,7 +272,8 @@ public class Coordinador {
 		public void iniciarPantallaConsumidoPeriodo() {
 			miPantallaConsumidoPeriodo.setVisible(true);			
 		}
-	    /*************************************************************************/	
+		
+		/*************************************************************************/	
 		//logs		
 		public void setmiLogs(Logs miLogs) {
 			this.miLogs = miLogs;
@@ -278,25 +282,14 @@ public class Coordinador {
 		public void cargaErrores(String error) {
 			miLogs.cargarArchivo(error);
 		}
-		/*************************************************************************/	
-		//DAO
-		public void setmiClientesDAO(ClientesDAO miClientesDAO) {
-			this.miClientesDAO = miClientesDAO;
-			
-		}
-
-		public void setmiProveedoresDAO(ProveedoresDAO miProveedoresDAO) {
-			this.miProveedoresDAO = miProveedoresDAO;
-			
-		}
-
-		public void setmiInsumosDAO(InsumosDAO miInsumosDAO) {
-			this.miInsumosDAO = miInsumosDAO;
-			
-		}
-
+		
 		/*************************************************************************/	
 		// ClientesDAO
+		
+		public void setmiClientesDAO(ClientesDAO miClientesDAO) {
+			this.miClientesDAO = miClientesDAO;			
+		}
+		
 		public boolean nuevoCliente(JTextField txtServicio) {
 			return miClientesDAO.nuevoCliente(txtServicio);
 		}
@@ -315,6 +308,11 @@ public class Coordinador {
 
 		/********************************************************************************/
 		// ProveedoresDAO
+		
+		public void setmiProveedoresDAO(ProveedoresDAO miProveedoresDAO) {
+			this.miProveedoresDAO = miProveedoresDAO;			
+		}
+		
 		public boolean nuevoProveedor(JTextField txtProveedor, JTextField txtTelefono, JTextField txtEmail) {
 			return miProveedoresDAO.nuevoProveedor(txtProveedor, txtTelefono, txtEmail);
 		}
@@ -341,6 +339,11 @@ public class Coordinador {
 
 		/********************************************************************************/
 		// InsumosDAO
+		
+		public void setmiInsumosDAO(InsumosDAO miInsumosDAO) {
+			this.miInsumosDAO = miInsumosDAO;			
+		}
+		
 		public int idMarca(JComboBox<String> cmbMarca) {
 			return miInsumosDAO.idMarca(cmbMarca);
 		}
@@ -397,46 +400,9 @@ public class Coordinador {
 		public int insumoId(JComboBox<String> cmbInsumo) {
 		return miInsumosDAO.idInsumoCMB(cmbInsumo);
 		}
-		
 
 		
-		
-
-		
-
-		
-
-		
-
-		
-
-		
-
-		
-
-		
-
-		
-
-		
-
-		
-
-		
-
-		
-
-
-		
-
-		
-		
-	    /*************************************************************************/
-		//DAO
-		
-	    /*************************************************************************/
-		//DTO
-		
+					
 	    /*************************************************************************/
 
 }
